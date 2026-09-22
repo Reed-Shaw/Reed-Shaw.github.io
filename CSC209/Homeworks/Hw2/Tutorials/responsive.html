@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <title>Responsive Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+        box-sizing: border-box;
+        }
+
+        .left {
+        background-color: #2196F3;
+        padding: 20px;
+        float: left;
+        width: 20%; /* The width is 20%, by default */
+        }
+
+        .main {
+        background-color: #f1f1f1;
+        padding: 20px;
+        float: left;
+        width: 60%; /* The width is 60%, by default */
+        }
+
+        .right {
+        background-color: #04AA6D;
+        padding: 20px;
+        float: left;
+        width: 20%; /* The width is 20%, by default */
+        }
+
+        /* Use a media query to add a break point at 800px: */
+        @media screen and (max-width: 800px) {
+        .left, .main, .right {
+            width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        }
+        }
+    </style>
+</head>
+<body>
+    <a href="../Tutorials/hw2Tutorials.html">Back to Hw2 Tutorials</a>
+    <hr>
+    <h1>Responsive Web Design</h1>
+    <p>Responsive web design is about creating web pages that look good on all devices! A responsive web design will 
+        automatically adjust for different screen sizes and viewports.</p>
+    <h2>Setting the Viewport</h2>
+    <p>To create a responsive website, add the following &ltmeta> tag to all your web pages:</p>
+    <p>&ltmeta name="viewport" content="width=device-width, initial-scale=1.0"></p>
+    <p>This will set the viewport of your page, which will give the browser instructions on how to control the page's dimensions 
+        and scaling.</p>
+    <hr>
+    <h2>Responsive Images</h2>
+    <p>Responsive images are images that scale nicely to fit any browser size.</p>
+    <h3>Using the Width Property</h3>
+    <p>If the CSS width property is set to 100%, the image will be responsive and scale up and down:</p>
+    <img src="../Tutorials/Images/rainbowOverMarsh.jpeg" style="width:100%;">
+    <p>"max-width:100%" prevents the image from getting bigger than its original size. However, if you make the browser window smaller, 
+        the image will still scale down.</p>
+    <img src="../Tutorials/Images/croppedRainbowOverMarsh.jpeg" style="max-width:100%;height:auto;">
+    <hr>
+    <h2>Responsive Text Size</h2>
+    <p>The text size can be set with a "vw" unit, which means the "viewport width".
+        That way the text size will follow the size of the browser window (see below).</p>
+    <p style="font-size:5vw;">Resize the browser window to see how the text size scales.</p>
+    <p style="font-size:5vw;">Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.</p>
+    <p>Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.</p>
+    <hr>
+    <h2>Media Queries</h2>
+    <p>In addition to resizing text and images, it is also common to use media queries in responsive web pages.With media queries you 
+        can define completely different styles for different browser sizes. Example: resize the browser window to see that the three div 
+        elements below will display horizontally on large screens and stack vertically on small screens:</p>
+
+    <div class="left">
+        <p>Left Menu</p>
+    </div>
+
+    <div class="main">
+    <p>Main Content</p>
+    </div>
+
+    <div class="right">
+    <p>Right Content</p>
+    </div>
+
+
+</body>

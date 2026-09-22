@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <title> HTML JavaScript Tutorial</title>
+</head>
+<body>
+    <a href="../Tutorials/hw2Tutorials.html">Back to Hw2 Tutorials</a>
+    <hr>
+    <!--Example 1-->
+    <h1>My First JavaScript</h1>
+    <button type="button"
+    onclick="document.getElementById('dateAndTimeButton').innerHTML = Date()">
+    Click me to display Date and Time.</button>
+    <p id="dateAndTimeButton"></p>
+    <hr>
+
+    <!--Example 2-->
+    <h1>The HTML &lt Script &gt Tag</h1>
+    <p>The HTML &ltscript&gt tag is used to define a client-side script (JavaScript).
+        The &ltscript&gt element either contains script statements, or it points to an external script file through the src attribute.
+        Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
+        To select an HTML element, JavaScript most often uses the document.getElementById() method.</p>
+    <!--I learned how to display the "<" and ">" signs on my webpage by googling "how to display "<" sign in html webpage" and 
+    "how to display ">" sign in html webpage" and reading the ai summary which reccomended I use the "named HTML entity" of these symbols
+    More info can be found on GeeksforGeeks at https://www.geeksforgeeks.org/html/html-symbols/-->
+    <h2>Use JavaScript to Change Text</h2>
+    <p>This example writes "Hello JavaScript!" into an HTML element with id="changeText":</p>
+    
+    <p id="changeText"></p>
+    
+    <script>
+    document.getElementById("changeText").innerHTML = "Hello JavaScript!";
+    </script> 
+    <hr>
+
+    <!--Example 3-->
+    <h1>More Examples of What JavaScript Can Do</h1>
+    <p>JavaScript can change the content of an HTML element:</p>
+    
+    <button type="button" onclick="myFunction()">Click Me!</button>
+    
+    <p id="changeButton">This is a demonstration.</p>
+    
+    <script>
+    function myFunction() { 
+        document.getElementById("changeButton").innerHTML = "Hello JavaScript!";
+    }
+    </script>
+
+    <br>
+
+    <p id="changeStyle">JavaScript can change the style of an HTML element.</p>
+    <script>
+    function myFunction() {
+        document.getElementById("changeStyle").style.fontSize = "25px";
+        document.getElementById("changeStyle").style.color = "red";
+        document.getElementById("changeStyle").style.backgroundColor = "yellow";
+    }
+    </script>
+    
+    <button type="button" onclick="myFunction()">Click Me!</button>
+
+    <br>
+
+    <p>Here, a JavaScript changes the value of the src (source) attribute of an image.</p>
+
+    <script>
+    function mask(sw) {
+        var pic;
+        if (sw == 0) {
+            pic = "../Tutorials/Images/theatreMaskHappy.jpg"
+        } else {
+            pic = "../Tutorials/Images/theatreMaskSad.jpg"
+        }
+        document.getElementById('myImage').src = pic;
+    }
+    </script>
+
+    <img id="myImage" src="../Tutorials/Images/theatreMaskHappy.jpg" width="100" height="180">
+
+    <p>
+    <button type="button" onclick="mask(1)">Sad</button>
+    <button type="button" onclick="mask(0)">Happy</button>
+    </p>
+    <hr>
+
+    <!--Example 4-->
+    <h1>The HTML &ltnoscript&gt Tag</h1>
+    <p>The HTML &ltnoscript&gt tag defines an alternate content to be displayed to users that have disabled scripts 
+        in their browser or have a browser that doesn't support scripts</p>
+    <p id="noBrowswerSupport"></p>
+
+    <script>
+        document.getElementById("noBrowswerSupport").innerHTML = "Hello JavaScript!";
+    </script>
+
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+    <p>A browser without support for JavaScript will show the text written inside the noscript element.</p>
+
+
+</body>

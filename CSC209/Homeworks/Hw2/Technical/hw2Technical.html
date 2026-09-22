@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<head>
+    <title>HW 2 Techinical</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link id="theme" rel="stylesheet" href="../Technical/lightMode.css"> 
+</head>
+<body>
+    <a href="../hw2.html">Back to Hw2 Page</a>
+    <hr>
+   <header>
+        <img src="../Technical/Images/smithCollegeLogo.jpg" style="width:10%">
+        <h1>THEATRE 153: Play with Light: An Introduction to the Culture of Light</h1>
+    </header>
+    <ul class="sidenav">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="https://moodle.smith.edu/pluginfile.php/2058579/mod_resource/content/1/THE153%20Culture%20of%20Light%20syllabus%20Fall%202026.pdf" target="_blank">Syllabus</a></li>
+        <li><a href="../Technical/hw2TechnicalrequiredReading.html">Required Reading</a></li>
+    </ul>
+
+    <div class="content">
+        <button type="button" id="readMeButton" onclick="readFunction()">ReadMe</button>
+        <p id="showAndHide"></p>
+        <script>
+            function readFunction() { 
+                if(document.getElementById("showAndHide").innerHTML  === ""){
+                    document.getElementById("showAndHide").innerHTML = "On Sunday, Sept 20th, we will be going on a field trip to Mass MoCA to learn about James Turrell! This is a non-required field trip, but if you can, you should go!";
+                    document.getElementByID("readMeButton").innerHTML = "Hide"
+                }
+                else{
+                    document.getElementById("showAndHide").innerHTML = "";
+                }
+                
+            }
+        </script>
+        <h1>THE 513 Schedule</h1>
+        <table class="light-table">
+            <tr>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Subject</th>
+                <th>Due</th>
+            </tr>
+            <tr>
+                <td>Tues, Sept 8</td>
+                <td>T207A</td>
+                <td>
+                    <ul>
+                        <li>Review <a href="https://moodle.smith.edu/pluginfile.php/2058579/mod_resource/content/1/THE153%20Culture%20of%20Light%20syllabus%20Fall%202026.pdf" target="_blank"> Syllabus </a></li>
+                        <li> <a href="../Technical/hw2TechnicalLecture1.html"Light All Around Us>Lecture 1- Light All Around Us</a></li>
+                        <li>Hand out <a href="https://moodle.smith.edu/pluginfile.php/2069845/mod_resource/content/1/This%20Light%20Is%20Come%20-%20Myths.pdf" target="_blank">Myths of Creation & First Light</a> reading</li>
+                    </ul>
+                </td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>Thurs, Sept 10</td>
+                <td>T207A</td>
+                <td>
+                    <ul>
+                        <li><a href="../Technical/hw2TechnicalLecture2.html" target="_blank"> Lecture 2- Light and Vision </a></li>
+                        <li><a href="https://moodle.smith.edu/pluginfile.php/2072639/mod_resource/content/1/Elements%20of%20Composition.pdf" target="_blank"> Elements of Composition</a></li>
+                    </ul>
+                </td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>Tues, Sept 15</td>
+                <td>T207A</td>
+                <td>
+                    <ul>
+                        <li>Discuss Myths of Creation & First Light</li>
+                        <li>Assign <a href="https://moodle.smith.edu/pluginfile.php/2072650/mod_resource/content/1/Myths%20of%20Creation%20%20First%20Light-%20project%20assignment.pdf" target="_blank"> Myth Project</a></li>
+                        <li><a href="../Technical/hw2TechnicalLecture3.html">Lecture 3- Functions of Light</a></li>
+                    </ul>
+                </td>
+                <td>Have read Myths of Creation & First Light</td>
+            </tr>
+            <tr>
+                <td>Thurs, Sept 17</td>
+                <td>T207A</td>
+                <td>
+                    <ul>
+                        <li>Lecture 4- Properties of Light</li>
+                    </ul>
+                </td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>Tues, Sept 22</td>
+                <td>T207A</td>
+                <td>
+                    <ul>
+                        <li>Myth Project presentations</li>
+                        <li>Hand out Little Globe of Sunshine to read</li>
+                    </ul>
+                </td>
+                <td>Myths project due</td>
+            </tr>
+            <tr>
+                <td>Thurs, Sept 24</td>
+                <td>T207A <br> Light Lab</td>
+                <td>
+                    <ul>
+                        <li>Lecture 5- Color</li>
+                        <li>Light Lab- Angles & Color</li>
+                    </ul>
+                </td>
+                <td>N/A</td>
+            </tr>
+        </table>
+        <button style="width:50px" type="button" onclick="myFunction()" style="width: auto;"><img src="../Technical/Images/sunAndMoon.jpg" alt="Lightmode Button"></button>
+        <script>
+            function myFunction(){
+                let theme = document.getElementById('theme');
+                // Toggle between light.css and dark.css
+                if (theme.getAttribute('href') == '../Technical/lightMode.css') {
+                    theme.setAttribute('href', '../Technical/darkMode.css');
+                } else {
+                    theme.setAttribute('href', '../Technical/lightMode.css');
+                }
+        }
+        </script>
+
+    </div>
+</body>

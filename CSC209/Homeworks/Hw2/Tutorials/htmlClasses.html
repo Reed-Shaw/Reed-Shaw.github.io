@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+    <title>HTML Classes Tutorial</title>
+    <style>
+    .city {
+        background-color: tomato;
+        color: white;
+        border: 2px solid black;
+        margin: 20px;
+        padding: 20px;
+    }
+    .note {
+        font-size: 120%;
+        color: red;
+    }
+    .main {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <a href="../Tutorials/hw2Tutorials.html">Back to Hw2 Tutorials</a>
+    <hr>
+    <!--The class attribute is often used to point to a class name in a style sheet. 
+    It can also be used by JavaScript to access and manipulate elements with the specific class name.
+    In the following example we have three <div> elements with a class attribute with the value of "city". 
+    All of the three <div> elements will be styled equally according to the .city style definition in the head section:-->
+    <!--First Example-->
+    <div class="city">
+        <h2>London</h2>
+        <p>London is the capital of England.</p>
+    </div> 
+    <div class="city">
+        <h2>Paris</h2>
+        <p>Paris is the capital of France.</p>
+    </div>
+    <div class="city">
+        <h2>Tokyo</h2>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+    <hr>
+    <!--Second Example-->
+    <h1>My <span class="note">Important</span> Heading</h1>
+    <p>This is some <span class="note">important</span> text.</p>
+    <hr>
+    <!--Tip: The class attribute can be used on any HTML element.
+    Note: The class name is case sensitive!
+    Tip: You can learn much more about CSS in our CSS Tutorial
+    HTML elements can belong to more than one class.-->
+    <!--Third Example-->
+    <h2>Multiple Classes</h2>
+    <p>Here, all three h2 elements belongs to the "city" class. In addition, London also belongs to the "main" class, which center-aligns the text.</p>
+    <h2 class="city main">London</h2>
+    <h2 class="city">Paris</h2>
+    <h2 class="city">Tokyo</h2>
+    <hr>
+    <!--Fourth Example-->
+    <h2>Different Elements Can Share Same Class</h2>
+    <p>Even if the two elements do not have the same tag name, they can both point to the same class, and get the same CSS styling:</p>
+    
+    <h2 class="city">Paris</h2>
+    <p class="city">Paris is the capital of France.</p>
+    <hr>
+    <!--Use with JavaScript-->
+    <h2>Use of The class Attribute in JavaScript</h2>
+    <p>Click the button to hide all elements with class name "city":</p>
+    
+    <button onclick="myFunction()">Hide elements</button>
+    
+    <h2 class="city">London</h2>
+    <p>London is the capital of England.</p>
+    
+    <h2 class="city">Paris</h2>
+    <p>Paris is the capital of France.</p>
+    
+    <h2 class="city">Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+    
+    <script>
+    function myFunction() {
+        var x = document.getElementsByClassName("city");
+        for (var i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        }
+    </script>
+
+    <hr>
+    <p>HMTL id practice- link to id Tutorial work, id label #C4</p>
+    <a href="idTutorial.html#C4">Jump to Chapter 4</a>
+</body>

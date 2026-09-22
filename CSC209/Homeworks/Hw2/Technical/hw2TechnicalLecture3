@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+     <title>HW 2 Techinical Lecture 3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link rel="stylesheet" href="../Technical/lightMode.css"> 
+</head>
+<body>
+    <header>
+        <h1>Lecture 3- Functions of Light</h1>
+    </header>
+    <h2>What are the Functions of Light?</h2>
+    <p>Consider how we use light. Does every light have a purpose? How can different kinds of lights (or different uses of the same light)
+        change the way we percieve a space?
+    </p>
+    
+    <a href="../Technical/hw2Technical.html">Return to Syllabus</a>
+    <hr>
+</body>
