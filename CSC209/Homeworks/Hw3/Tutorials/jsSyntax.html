@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Syntax Tutorial</title>
+        <link rel="stylesheet" href="basicTutorial.css">
+    </head>
+
+    <body>
+        <div class="headerDiv"><a href="./tutorial.html">Back to Tutorials</a></div>
+        <hr>
+        
+        <div class="mainDiv">
+            <h2>JavaScript Values</h2>
+            <p>The JavaScript syntax defines two types of values:</p>
+            <ul>
+                <li>Literals (Fixed values)</li>
+                <li>Variables (Variable values)</li>
+            </ul>
+            <hr class="divHr">
+            <h3>JavaScript Literals</h3>
+            <p>The most important syntax rules for literals (fixed values) are:</p>
+
+            <p><b>Numbers</b> are written with or without decimals:</p>
+            <p id="decNumDemo"></p>
+
+            <script>
+                document.getElementById("decNumDemo").innerHTML = 10.50;
+            </script>
+
+            <p id="wholeNumDemo"></p>
+
+            <script>
+                document.getElementById("wholeNumDemo").innerHTML = 100;
+            </script> 
+    
+            <p><b>Strings</b> are text, written within double or single quotes:</p>
+            <p id="stringDemo"></p>
+
+            <script>
+                document.getElementById("stringDemo").innerHTML = 'John Doe';
+            </script>
+
+            <hr class="divHr">
+
+            <h3>JavaScript Keywords</h3>
+            <p>JavaScript keywords are used to defines actions to be performed. The let and const keywords create variables:</p>
+
+            <p>The let and const keywords create variables. Here, the code says 'let x = 5;', 'const fname = "John"'. </p>
+            <p>Then we say 'document.getElementById("keywordDemo").innerHTML = fname + " is " + x + " years old.";'.</p>
+            <p>This writes:</p>
+
+            <p id="keywordDemo"></p>
+
+            <script>
+                let x = 5;
+                const fname = "John";
+
+                document.getElementById("keywordDemo").innerHTML = fname + " is " + x + " years old.";
+            </script>
+
+            <p>Note: JavaScript keywords are case-sensitive. JavaScript does not interpret LET or Let as the keyword let.</p>
+
+            <hr class="divHr">
+
+            <h3>JavaScript Variables</h3>
+            <p><b>Variables</b> are containers for storing data values. Variables must be identified with unique names.</p>
+
+            <p>In this example, y is defined as a variable. Then, y is assigned the value of 6:</p>
+
+            <p id="variablesDemo"></p>
+
+            <script>
+                let y;
+                y = 6;
+                document.getElementById("variablesDemo").innerHTML = "The value of y is " + y;
+            </script>
+
+            <p><b>NOTE:</b> <b>let</b> variables can be changed. <b>const</b> variables should be used if the value should not be changed.</p>
+
+            <hr class="divHr">
+
+            <h3>JavaScript Identifiers</h3>
+            <p>An identifier is the name you give to a variable.</p>
+            <p>Rules for identifiers:</p>
+            <ul>
+                <li>Must start with a letter, _, or $</li>
+                <li>Can contain digits after the first character</li>
+                <li>Cannot be a reserved keyword (let, const, if, etc.)</li>
+                <li>Are case-sensitive</li>
+            </ul>
+
+            <hr class="divHr">
+
+            <h3>JavaScript Operators</h3>
+            <p>JavaScript assignment operators (=) assign values to variables:</p>
+
+            <p id="operatorDemo"></p>
+
+            <script>
+                let w = 5;
+                let z = 6;
+                let sum = w + z;
+                document.getElementById("operatorDemo").innerHTML = "The sum is " + sum;
+            </script>
+
+            <p>JavaScript uses arithmetic operators ( + - * / ) to compute values:</p>
+
+            <hr class="divHr">
+
+            <h3>JavaScript Expressions</h3>
+            <p>An expression is a combination of values, variables, and operators, which computes to a value.</p>
+            <p id="expressionDemo"></p>
+
+            <script>
+                document.getElementById("expressionDemo").innerHTML = "John" + " "  + "Doe";
+            </script>
+
+            <hr class="divHr">
+
+            <h3>JavaScript is Case Sensitive</h3>
+            <p>avaScript identifiers are case sensitive. The variables lastName and lastname, are different variables</p>
+            <p>Historically, programmers have used different ways of joining multiple words into one variable name:</p>
+            <p>Hyphens: first-name, last-name, master-card, inter-city.</p>
+            <p>Underscore: first_name, last_name, master_card, inter_city.</p>
+            <p>Upper Camel Case (Pascal Case): FirstName, LastName, MasterCard, InterCity.</p>
+            <p>Lower Camel Case: firstName, lastName, masterCard, interCity.</p>
+            <p>NOTE: Hyphens are not allowed in JavaScript. They are reserved for subtractions.</p>
+            <p>NOTE: JavaScript programmers tend to use lower camel case.</p>
+
+            <hr class="divHr">
+
+            <h3>Comments</h3>
+            <p>Single line comments start with //. Any text between // and the end of the line will be ignored by JavaScript 
+                (will not be executed). This example uses a single-line comment before each code line.</p>
+            <p>Multi line comments start with /* and end with */. Any text between /* and */ will be ignored by JavaScript.</p>
+
+        </div>
+
+    </body>
+</html>

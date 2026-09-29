@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<head>
+    <title>If Conditions Tutorial</title>
+    <link rel="stylesheet" href="basicTutorial.css">
+</head>
+
+<body>
+    <div class="headerDiv"><a href="./tutorial.html">Back to Tutorials</a></div>
+    <hr>
+
+    <div class="mainDiv">
+        <h2>If Conditions</h2>
+        <h3>The JavaScript if Statement</h3>
+        <p>Use the JavaScript if statement to execute a block of code when a condition is true.</p>
+        <h3>Syntax</h3>
+        <p>if (condition) { <br>
+            //  block of code to be executed if the condition is true <br>
+        }</p>
+
+        <p>NOTE: "if" must be lowercase.</p>
+
+        <hr class="divHr">
+
+        <p>Display "Good day!" if the hour is less than 18:00:</p>
+
+        <p id="ifCondtnEx1" style="color: rgb(0, 94, 30);">Good Evening!</p>
+
+        <script>
+            if (new Date().getHours() < 18) {
+            document.getElementById("ifCondtnEx1").innerHTML = "Good day!";
+        }
+        </script>
+
+        <p>Display "You can Drive" if age > 18. Note: the variable 'text' starts as "You can Not drive!" but within the "if" statement,
+            the variable 'age' is measured against the number 18, and since it's equal to 18, 'text' is changed to "You can drive!". 
+        </p>
+        <p id="ifCondtnEx2" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            let age1 = 18;
+            let text1 = "You can Not drive!";
+
+            if (age1 >= 18) {
+                text1 = "You can drive!";
+            }
+
+            document.getElementById("ifCondtnEx2").innerHTML = text;
+        </script>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Nested If</h3>
+        <p>You can use an if statement inside another if statement.</p>
+        <p>Here, we have variables age2 = 16, country = "USA", and text2 = "You can Not drive!". An if loop determines if 
+            country == "USA", if so, another if loop determines if age >= 16. If so, text2 changes to "You can drive!". A paragraph
+            with an id has it's innerHTML changed to text2:
+        </p>
+
+        <p id="nestedIfDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            let age2 = 17;
+            let country1 = "USA";
+            let text2 = "You can Not drive!";
+
+            if (country1 == "USA") {
+                if (age2 >= 16) {
+                    text2 = "You can drive!";
+                }
+            }
+
+            document.getElementById("nestedIfDemo").innerHTML = text2;
+        </script>
+        <hr class="divHr">
+
+        <h3>Using the Logical AND Operator Instead</h3>
+        <p>The code can be made less complex by having one if statement saying "if (country == "USA" && age >= 16)" then
+                changing the text to be "You can drive!" See below:</p>
+        <p id="demo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            let age3 = 16;
+            let country2 = "USA";
+            let text3 = "You can Not drive!";
+
+            if (country2 == "USA" && age3 >= 16) {
+                text3 = "You can drive!";
+            }
+
+            document.getElementById("demo").innerHTML = text3;
+        </script>
+    </div>
+
+    <div class="mainDiv">
+        <h3>If Else</h3>
+        <h4>The else statement syntax</h4>
+        <p>Use the else statement to specify a block of code to be executed if a condition is false.</p>
+        <p>if (condition) {<br>
+            //  block of code to be executed if the condition is true<br>
+        } else {<br>
+            //  block of code to be executed if the condition is false<br>
+        }</p>
+        <hr class="divHr">
+        <p>In this next example, two variables are made; 'const hour = new Date().getHours();', and 'let greeting;'. The if part of
+            the loop says 'if (hour &lt 18)', if that is true greeting gets assigned "good day". In the else part of the loop,
+            greeting is assigned "Good evening".
+        </p>
+
+        <p id="timeDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            const hour = new Date().getHours(); 
+            let greeting1;
+
+            if (hour < 18) {
+                greeting1 = "Good day";
+            } else {
+                greeting1 = "Good evening";
+            }
+
+            document.getElementById("timeDemo").innerHTML = greeting1;
+        </script>
+    </div>
+
+    <div class="mainDiv">
+        <h3>The Else If Statement</h3>
+        <p>Use the else if statement to specify a new condition if the first is false.</p>
+        <p><b>Syntax</b></p>
+        <p>if (condition1) {<br>
+        //  block of code to be executed if condition1 is true<br>
+        } else if (condition2) {<br>
+        //  block of code to be executed if the condition1 is false and condition2 is true<br>
+        } else {<br>
+        //  block of code to be executed if the condition1 is false and condition2 is false<br>
+        }<br></p>
+        <hr class="divHr">
+        <h3>Else If Example</h3>
+        <p>The next example has a variable 'time' getting the hour, and a 'greeting' variable. The "if" part of the loop checks if 'time'
+            is less than 10. If it is, 'greeting' becomes "Good morning". If not, the 'else if' part of the loop checks if 'time' is 
+            less than 20. If it is, 'greeting' becomes "Good day". If not, the 'else' part of the loop makes 'greeting' "Good evening":
+        </p>
+        <p id="timeDemo2" style="color: rgb(0, 94, 30);"></p>
+        <script>
+            const time = new Date().getHours();
+            let greeting2;
+            if (time < 10) {
+                greeting2 = "Good morning";
+            } else if (time < 20) {
+                greeting2 = "Good day";
+            } else {
+                greeting2 = "Good evening";
+            }
+            document.getElementById("timeDemo2").innerHTML = greeting2;
+        </script>
+    </div>
+
+    <div class="mainDiv">
+        <h2>Switch Control Flow</h2>
+        <p>Bsed on a condition, switch selects one or more code blocks to be executed. Switch executes the code blocks that 
+            matches an expression. Switch is often used as a more readable alternative to many if...else if...else statements, 
+            especially when dealing with multiple possible values.</p>
+
+        <p><b>Syntax</b></p>
+        <p>switch(expression) {<br>
+            case x:<br>
+            // code block<br>
+            break;<br>
+            case y:<br>
+            // code block<br>
+            break;<br>
+            default:<br>
+            // code block<br>
+        }<br></p>
+        <p>This is how it works:</p>
+        <ul>
+            <li>The switch expression is evaluated once.</li>
+            <li>The value of the expression is compared with the values of each case.</li>
+            <li>If there is a match, the associated block of code is executed.</li>
+            <li>If there is no match, no code is executed.</li>
+        </ul>
+        <hr class="divHr">
+
+        <h3>Switch Example</h3>
+        <p>This example uses the weekday number to calculate the weekday name in a switch:</p>
+        <p id="switchDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            let day;
+            //The getDay() method returns the weekday as a number between 0 and 6.
+            let date = new Date().getDay();
+            
+            switch (date) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case  6:
+                day = "Saturday";
+            }
+
+            document.getElementById("switchDemo").innerHTML = "Today is " + day;
+        </script>
+        <p>Note: The <b>break</b> keyword- When JavaScript reaches a break keyword, it breaks out of the switch block. This will stop the 
+            execution inside the switch block. No more statements in the switch block will be executed. It is not necessary to break 
+            the last case. The switch ends (breaks) there anyway.</p>
+        <p>Note: The <b>default</b> keyword- The default keyword specifies a block of code to run if there is no case match. The default 
+            keyword is optional. The default can act as a fallback. It does not have to live at the end of the block.</p>
+        <hr class="divHr">
+        <h3>Common Code Blocks</h3>
+        <p>Sometimes you want different switch cases to use the same code. In this example case 4 and 5 share the same code block, 
+            and 0 and 6 share another code block:</p>
+
+        <p id="switchDemo2" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            let text4;
+            switch (new Date().getDay()) {
+            case 4:
+            case 5:
+                text4 = "Soon it is Weekend";
+                break;
+            case 0:
+            case 6:
+                text4 = "It is Weekend";
+                break;
+            default:
+                text = "Looking forward to the Weekend";
+            }
+            document.getElementById("switchDemo2").innerHTML = text4;
+        </script>
+        <hr class="divHr">
+
+        <h3>Switching Details</h3>
+        <p>If multiple cases matches a case value, the first case is selected. If no matching cases are found, the program continues 
+            to the default label. If no default label is found, the program continues to the statement(s) after the switch.</p>
+        <hr class="divHr">
+
+        <h3>Strict Comparison</h3>
+        <p>Switch uses strict comparison (===). The values must be of the same type to match. A strict comparison can only be 
+            true if both operands are of the same type.</p>
+
+        <p id="strictDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            let x = "0";
+
+            switch (x) {
+            case 0:
+                text5 = "Off";
+                break;
+            case 1:
+                text5 = "On";
+                break;
+            default:
+                text5 = "No value found";
+            }
+            document.getElementById("strictDemo").innerHTML = text5;
+        </script>
+    </div>
+
+</body>

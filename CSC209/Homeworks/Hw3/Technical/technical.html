@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+    <title>HW3 Techinical</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link id="theme" rel="stylesheet" href="./Css/technical.css"> 
+</head>
+
+<body>
+    <ul id="navBar" class="leftsidenav">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="./requiredReadingTechincal.html">Required Reading</a></li>
+        <li><a href="https://moodle.smith.edu/pluginfile.php/2058579/mod_resource/content/1/THE153%20Culture%20of%20Light%20syllabus%20Fall%202026.pdf" target="_blank">Syllabus</a></li>
+        <li><a href="../hw3.html">Back to Hw3</a></li>
+    </ul>
+    <div id="myDiv" class="content">
+        <header>
+            <h1> <img src="../Technical/Images/smithCollegeLogo.jpg" style="width:3%"> THEATRE 153: Play with Light: An Introduction to 
+                the Culture of Light <img src="../Technical/Images/smithCollegeLogo.jpg" style="width:3%"></h1>
+        </header>
+        
+       <!--Putting the button in a div using css 'center' so the button is centered.-->
+        <div class="center">
+            <button type="button" class="niceButton" id="creditsButton" onclick="showCredits()">Credits</button>
+            <button type="button" class="niceButton" id="timeButton" onclick="showTime()">Today's Date Is</button>
+            <button type="button" class="niceButton" id="readMeButton" onclick="readFunction()">ReadMe</button>
+            <button type="button" class="niceButton" id="changeNavBarButton" onclick="changeNavBar()">Change NavBar Position</button>
+        </div>
+
+        <!--Div and Paragraph for showing credits-->
+        <div class="inside">
+            <p id="myCredits"></p>
+        </div>
+
+        <!--Div and paragraph for showing the time-->
+        <div class="inside">
+            <p id="showTime"></p>
+        </div> 
+
+        <!--Div and paragraph for showing the 'secret' message-->
+        <div class="inside">
+            <p id="showAndHide"></p>
+        </div> 
+        
+        <div class="inside">
+            <h1>THE 513 Schedule</h1>
+            <div class="center">
+                <button type="button" class="niceButton" id="hideScheduleButton" onclick="hideSchedule()">Show/Hide Schedule</button>
+            </div>
+            <table class="light-table" id="scheduleTable">
+                <tr id='row0' style="display: table-row;" style="width: 100%">
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Subject</th>
+                    <th>Due</th>
+                    <th>Show/Hide</th>
+                </tr>
+                <tr id='row1' style="display: none;" style="width: 100%">
+                    <td>Tues, Sept 8</td>
+                    <td>T207A</td>
+                    <td>
+                        <ul>
+                            <li>Review <a href="https://moodle.smith.edu/pluginfile.php/2058579/mod_resource/content/1/THE153%20Culture%20of%20Light%20syllabus%20Fall%202026.pdf" target="_blank"> Syllabus </a></li>
+                            <li> <a href="./lecture1.html"Light All Around Us>Lecture 1- Light All Around Us</a></li>
+                            <li>Hand out <a href="https://moodle.smith.edu/pluginfile.php/2069845/mod_resource/content/1/This%20Light%20Is%20Come%20-%20Myths.pdf" target="_blank">Myths of Creation & First Light</a> reading</li>
+                        </ul>
+                    </td>
+                    <td>N/A</td>
+                    <td><button type="button" class="niceButton" id="week1" onclick="hideRow('row1')">Hide Row</button></td>
+                </tr>
+                <tr id='row2' style="display: table-row;" style="width: 100%">
+                    <td>Thurs, Sept 10</td>
+                    <td>T207A</td>
+                    <td>
+                        <ul>
+                            <li><a href="./lecture2.html" target="_blank"> Lecture 2- Light and Vision </a></li>
+                            <li><a href="https://moodle.smith.edu/pluginfile.php/2072639/mod_resource/content/1/Elements%20of%20Composition.pdf" target="_blank"> Elements of Composition</a></li>
+                        </ul>
+                    </td>
+                    <td>N/A</td>
+                    <td><button type="button" class="niceButton" id="week2" onclick="hideRow('row2')">Hide Row</button></td>
+                </tr>
+                <tr id='row3' style="display: table-row;" style="width: 100%">
+                    <td>Tues, Sept 15</td>
+                    <td>T207A</td>
+                    <td>
+                        <ul>
+                            <li>Discuss Myths of Creation & First Light</li>
+                            <li>Assign <a href="https://moodle.smith.edu/pluginfile.php/2072650/mod_resource/content/1/Myths%20of%20Creation%20%20First%20Light-%20project%20assignment.pdf" target="_blank"> Myth Project</a></li>
+                            <li><a href="./lecture3.html">Lecture 3- Functions of Light</a></li>
+                        </ul>
+                    </td>
+                    <td>Have read Myths of Creation & First Light</td>
+                    <td><button type="button" class="niceButton" id="week3" onclick="hideRow('row3')">Hide Row</button></td>
+                </tr>
+                <tr id='row4' style="display: table-row;" style="width: 100%">
+                    <td>Thurs, Sept 17</td>
+                    <td>T207A</td>
+                    <td>
+                        <ul>
+                            <li>Lecture 4- Properties of Light</li>
+                        </ul>
+                    </td>
+                    <td>N/A</td>
+                    <td><button type="button" class="niceButton" id="week4" onclick="hideRow('row4')">Hide Row</button></td>
+                </tr>
+                <tr id='row5' style="display: table-row;" style="width: 100%">
+                    <td>Tues, Sept 22</td>
+                    <td>T207A</td>
+                    <td>
+                        <ul>
+                            <li>Myth Project presentations</li>
+                            <li>Hand out Little Globe of Sunshine to read</li>
+                        </ul>
+                    </td>
+                    <td>Myths project due</td>
+                    <td><button type="button" class="niceButton" id="week5" onclick="hideRow('row5')">Hide Row</button></td>
+                </tr>
+                <tr id='row6' style="display: table-row;" style="width: 100%">
+                    <td>Thurs, Sept 24</td>
+                    <td>T207A <br> Light Lab</td>
+                    <td>
+                        <ul>
+                            <li>Lecture 5- Color</li>
+                            <li>Light Lab- Angles & Color</li>
+                        </ul>
+                    </td>
+                    <td>N/A</td>
+                    <td><button type="button" class="niceButton" id="week6" onclick="hideRow('row6')">Hide Row</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="center">
+            <button type="button" class="niceButton" onclick="changeTheme()" style="width: auto;">Change Theme</button>
+        </div>
+        
+
+    </div>   
+    <script src="technical.js"></script> 
+
+</body>

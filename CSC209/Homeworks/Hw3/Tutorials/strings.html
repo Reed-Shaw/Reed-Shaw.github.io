@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<head>
+    <title>JS Strings Tutorial</title>
+    <link rel="stylesheet" href="basicTutorial.css">
+</head>
+
+<body>
+    <div class="headerDiv"><a href="./tutorial.html">Back to Tutorials</a></div>
+    <hr>
+
+    <div class="mainDiv">
+        <h2>JavaScript Strings</h2>
+        <p>Strings are for storing next. A JavaScript string is zero or more characters written inside quotes.</p>
+        <p>You can use single or double quotes.</p>
+        <h3>Quotes Inside Quotes</h3>
+        <p>You can use quotes inside a string, as long as they don't match the quotes surrounding the string. The following are both
+            valid JavaScript:
+        </p>
+        <p>let answer1 = "He is called 'Johnny'";</p>
+        <p>let answer2 = 'He is called "Johnny"';</p>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Template Strings</h3>
+        <p>Templates are strings enclosed in backticks (`This is a template string`). Templates allow single and double quotes inside 
+            a string. The following is valid JavaScript:</p>
+        <p>let text = `He's often called "Johnny"`;</p>
+    </div>
+
+    <div class="mainDiv">
+        <h3>String Length</h3>
+        <p>To find the length of a string, use the built-in length property. Here we make a variable text1 and then write 
+            text1.length at the end of the document.getElementById to print the length of text1 in a paragraph.
+        </p>
+        <p>The length of the string is:</p>
+        <p id="stringLengthDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            let text1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            document.getElementById("stringLengthDemo").innerHTML = text1.length;
+        </script>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Escape Characters</h3>
+        <p>Because strings must be written within quotes, JavaScript will misunderstand this string: let text = "We are the so-called
+            "Vikings" from the north."; </p>
+        <p>To solve this problem, you can use an backslash escape character. The backslash escape character (\) turns special characters 
+            into string characters:</p>
+        <table>
+            <th>code</th>
+            <th>result</th>
+            <tr>
+                <td>\'</td>
+                <td>'</td>
+            </tr> 
+            <tr>
+                <td>\"</td>
+                <td>"</td>
+            </tr>
+            <tr>
+                <td>\\</td>
+                <td>\</td>
+            </tr>
+            <tr>
+                <td>\b</td>
+                <td>backspace</td>
+            </tr>
+            <tr>
+                <td>\f</td>
+                <td>form feed</td>
+            </tr>
+            <tr>
+                <td>\n</td>
+                <td>new line</td>
+            </tr>
+            <tr>
+                <td>\r</td>
+                <td>carriage return</td>
+            </tr>
+            <tr>
+                <td>\t</td>
+                <td>horizontal tabulator</td>
+            </tr>
+            <tr>
+                <td>\v</td>
+                <td>vertical tabulator</td>
+            </tr>
+        </table>
+        <hr class="divHr">
+
+        <h3>Examples</h3>
+        <p>\" inserts a double quote in a string to fix the problem we saw at the beginning:</p>
+        <p id="escCharDemo"></p>
+
+        <script>
+            let text2 = "We are the so-called \"Vikings\" from the north.";
+            document.getElementById("escCharDemo").innerHTML = text2; 
+        </script>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Interpoliation</h3>
+        <p>Template Strings allow variables in strings. Template strings provide an easy way to interpolate variables in strings.</p>
+        <p><b>Syntax</b></p>
+        <p>${...}</p>
+
+        <h3>Example</h3>
+        <p>In the following example, 'firstName', and 'lastName' are given values. 'text3' is set to `Welcome ${firstName}, ${lastName}!`;</p>
+        <p id="interpolationDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            let firstName = "John";
+            let lastName = "Doe";
+
+            let text3 = `Welcome ${firstName}, ${lastName}!`;
+
+            document.getElementById("interpolationDemo").innerHTML = text3;
+        </script>
+        <hr class="divHr">
+
+        <h3>Expression Substitution</h3>
+        <p>Template Strings allow interpolation of expressions in strings. You can put expressions in the interpolation</p>
+        <p>Here, varibales 'price' and 'vat' are given values and 'total' = `Total: ${(price * (1 + VAT)).toFixed(2)}`;.</p>
+        <p id="interpolDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            let price = 10;
+            let VAT = 0.25;
+            let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+
+            document.getElementById("interpolDemo").innerHTML = total;
+        </script>
+
+
+    </div>
+</body>

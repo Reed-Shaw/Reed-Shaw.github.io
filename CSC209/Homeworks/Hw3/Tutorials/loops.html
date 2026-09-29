@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<head>
+    <title>JS Loops Tutorial</title>
+    <link rel="stylesheet" href="basicTutorial.css">
+</head>
+
+<body>
+    <div class="headerDiv"><a href="./tutorial.html">Back to Tutorials</a></div>
+    <hr>
+
+    <div class="mainDiv">
+        <h2>Java Script Loops</h2>
+        <p>Loops are good for if you want to run a bloack of code over and over again, each time with a different value.</p>
+        <p>For an example, this for loop will write the text from an array list of cars:</p>
+        <p id="forLoopDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+
+            let text1 = "";
+            for (let i = 0; i < cars.length; i++) {
+                text1 += cars[i] + "<br>";
+            }
+
+            document.getElementById("forLoopDemo").innerHTML = text1;
+        </script>
+    </div>
+
+    <div class="mainDiv">
+        <h3>The For Loop</h3>
+        <p><b>Syntax:</b></p>
+        <p>The for statement creates a loop with 3 optional expressions:</p>
+        <p>for (expr1; expr2; expr3) {<br>
+            // code block to be executed<br>
+        }<br></p>
+        <p><b>expr1</b> is executed one time before the execution of the code block. 
+            <ul>
+                <li><b>expr1</b> is used to initialize the variable(s) used in the loop (let i = 0). expr1 is optional. You can omit 
+                    expr1 if the value is set before the loop starts (and you don't mind what it's value is already).
+                </li>
+            </ul>
+        <b>expr2</b> defines the condition for executing the code block. 
+            <ul>
+                <li><b>expr2</b> is used to evaluate the condition of the initial variable (i &lt len). expr2 is also optional. If expr2 
+                    returns false, the loop will end.
+                </li>
+                <li>NOTE: If you omit exp 2, you must provide a break inside the loop. Otherwise the loop will never end. This will crash 
+                    your browser.
+                </li>
+            </ul>
+        <b>exp3</b> is executed every time the code block has been executed.</p>
+             <ul>
+                <li><b>exp3</b> increments the value of the initial variable (i++). expr3 is optional. expr3 can do anything like 
+                    negative increment (i--), positive increment (i = i + 15), or anything else. expr3 can be omitted (if you increment 
+                    the value inside the loop)
+                </li>
+            </ul>
+        <hr class="divHr">
+
+        <h3>Example</h3>
+        <p>This example shows the number of times the code has looped.</p>
+        <p id="forLoopDemo2" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            let text2 = "";
+
+            for (let i = 0; i < 5; i++) {
+                text2 += "The number is " + i + "<br>";
+            }
+
+            document.getElementById("forLoopDemo2").innerHTML = text2;
+        </script>
+
+        <p><b>expr1</b> sets a variable before the loop starts (let i = 0). <b>expr2</b>  defines the condition for the loop to run 
+            (i must be less than 5). <b>exp3</b> increases a value (i++) each time the code block has been executed.</p>
+        </div>
+        
+        <div class="mainDiv">
+            <h3>Loop Scope</h3>
+            <p>In this example, let i = 5; is declared outside the loop.</p>
+            <p id="loopScopeDemo" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+                let i = 5;
+                for (i = 0; i < 10; i++) {
+                // some statements
+                }
+                document.getElementById("loopScopeDemo").innerHTML = i;
+            </script>
+
+            <p>In this example, let j = 0; is declared inside the loop.</p>
+            <p id="loopScopeDemo2" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+                let j = 5;
+
+                for (let j = 0; j < 10; j++) {
+                // some statements
+                }
+
+                document.getElementById("loopScopeDemo2").innerHTML = j;
+            </script>
+            <p>Note: When a variable is declared with let or const inside a loop, it will only be visible within the loop!</p>
+        </div>
+
+        <div class="mainDiv">
+            <h3>The While Loop</h3>
+            <p>The while loop loops through a block of code as long as a specified condition is true.</p>
+            <p><b>Syntax:</b></p>
+            <p>while (condition) {<br>
+            // code block to be executed<br>
+            }<br></p>
+            <hr class="divHr">
+
+            <h3>Example</h3>
+            <p>In the following example, the code in the loop will run, over and over again, as long as a variable (n) 
+                is less than 10:</p>
+            <p id="whileDemo" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+                let text = "";
+
+                let n = 0;
+                while (n < 10) {
+                    text += "The number is " + n + "<br>";
+                    n++;
+                }
+
+                document.getElementById("whileDemo").innerHTML = text;
+            </script>
+        </div>
+
+        <div class="mainDiv">
+            <h3>The Do While Loop</h3>
+            <p>The do while loop is a variant of the while loop. The do while loop will execute the code block once, before checking 
+                if the condition is true, then it will repeat the loop as long as the condition is true.</p>
+            <p><b>Syntax:</b></p>
+            <p>do {<br>
+            // code block to be executed<br>
+            }<br>
+            while (condition);<br></p>
+            <p>The do while runs at least once, even if the condition is false from the start. This is because the code block is 
+                executed before the condition is tested.</p>
+            <hr class="divHr">
+
+            <h3>Example</h3>
+             <p>In the following example, the code in the do will run, and then the condition will be tested in the while loop.
+                If the while statement is true, the code will keep looping until the while statement is not true.</p>
+            <p id="doWhileDemo" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+                let text6 = ""
+                let m = 0;
+
+                do {
+                    text6 += "<br>The number is " + m;
+                    m++;
+                }
+                while (m < 10);  
+
+                document.getElementById("doWhileDemo").innerHTML = text6;
+            </script>
+            <p>Note: When running any sort of while loop, don't forget to increase the variable used in the condition, otherwise the 
+                loop will never end!</p>
+        </div>
+
+        <div class="mainDiv">
+            <h3>Break in Loops</h3>
+            <p>When break is encountered in a loop, the loop terminates immediately. The program control is transfered to the 
+                statements following the loop. No more loop iterations are executed.</p>
+            <hr class="divHr">
+
+            <h3>Example</h3>
+            <p>This loop will terminate the loop (break the loop) when the loop counter (i) is 3 even though it is set to loop
+                until i &lt 10.
+            </p>
+
+            <p id="loopBreakDemo" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+                let text7 = "";
+
+                for (let i = 0; i < 10; i++) {
+                    if (i === 3) { break; }
+                    text7 += "The number is " + i + "<br>";
+                }
+
+                document.getElementById("loopBreakDemo").innerHTML = text7;
+            </script>
+            <hr class="divHr">
+
+            <h3>Labed Break</h3>
+            <p>JavaScript can use label break statements to exits a loop or block and transfers the control to the labeled statement. 
+                The break statement is particularly useful for breaking out of inner or outer loops from nested loops.</p>
+            
+            <h3>Example 1</h3>
+            <p>This example will break out of the loops it's in when the counter hits 3. At that time, the code says 'if (i === 3) { break loop1; }'
+                forcing the entire nested loop sequence to stop.
+            </p>
+            <p id="breakLoopDemo" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+            let text8 = "";
+
+            loop1: for (let j = 1; j < 5; j++) {
+                loop2: for (let i = 1; i < 5; i++) {
+                    if (i === 3) { break loop1; }
+                    text8 += i + "<br>";
+                }
+            }
+            document.getElementById("breakLoopDemo").innerHTML = text8;
+            </script>
+            <hr class="divHr">
+
+            <h3>Example 2</h3>
+            <p>This example will break out of the loop it's in when the counter hits 3. At that time, the code says
+                'if (i === 3) { break loop2; }'. Since we're in loop2 already, we go back to loop1, which puts us back into loop2, which
+                will break us back out a number of times until the foor loop in loop1 has counted up to it's limit.
+            </p>
+            <p id="breakLoopDemo2" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+                let text9 = "";
+
+                loop1: for (let j = 1; j < 5; j++) {
+                    loop2: for (let i = 1; i < 5; i++) {
+                        if (i === 3) { break loop2; }
+                        text9 += i + "<br>";
+                    }
+                    }
+                document.getElementById("breakLoopDemo2").innerHTML = text9;
+            </script>
+            <p>Note: break and continue are the only JavaScript statements that can "jump out of" 
+                a code block. (A code block is a block of code between { and }).</p>
+            <p><b>Without</b> a label reference, <b>break can only jump out of a loop or a switch</b>.</p>
+            <p><b>With</b> a label reference, <b>break can jump out of any code block</b></p>
+        </div>
+
+        <div class="mainDiv">
+            <h3>The Comtinue Statement</h3>
+            <p>The continue statement skips the current iteration in a loop. The remaining code in
+                the iteration is skipped and processing moves to the next iteration.</p>
+            <h3>Example</h3>
+            <p>This example skips the interation where i=3 in the loop.</p>
+            <p id="continueDemo" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+                let text10 = "";
+
+                for (let i = 1; i < 10; i++) {
+                    if (i === 3) { continue; }
+                    text10 += i*10 + "<br>";
+                }
+
+                document.getElementById("continueDemo").innerHTML = text10;
+            </script>
+        </div>
+
+</body>

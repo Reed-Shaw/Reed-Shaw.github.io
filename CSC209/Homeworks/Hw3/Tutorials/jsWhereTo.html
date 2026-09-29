@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="basicTutorial.css">
+        <script>
+            function changeFromHeadFunction() {
+                document.getElementById("headDemo").innerHTML = "Paragraph changed.";
+            }
+        </script>
+    </head>
+    <body>
+        <div class="headerDiv"><a href="./tutorial.html">Back to Tutorials</a></div>
+        <hr>
+        
+        <div class="mainDiv">
+            <h2>JavaScript can be written in the head</h1>
+            <h2>Demo JavaScript in Head</h2>
+            <p id="headDemo">A Paragraph.</p>
+            <button type="button" onclick="changeFromHeadFunction()">Try it</button>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h2>JavaScript can be written in the body</h1>
+            <h2>Demo JavaScript in Body</h2>
+            <p id="bodyDemo">A Paragraph</p>
+            <button type="button" onclick="changeFromBodyFunction()">Try it</button>
+            <script>
+                function changeFromBodyFunction() {
+                    document.getElementById("bodyDemo").innerHTML = "Paragraph changed.";
+                }
+            </script>
+        </div>
+        <hr>
+         <div class="mainDiv">
+            <h2>JavaScript can be written in an external JS file</h1>
+            <h2>Demo JavaScript from External JS</h2>
+            <p id="externalDemo">A Paragraph</p>
+            <button type="button" onclick="changeFromExternalFunction()">Try it</button>
+            <script src="jsWhereTo.js"></script>
+        </div>
+
+    </body>
+</html> 

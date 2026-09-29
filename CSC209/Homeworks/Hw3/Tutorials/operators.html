@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<head>
+    <title>Operators Tutorial</title>
+    <link rel="stylesheet" href="basicTutorial.css">
+</head>
+
+<body>
+    <div class="headerDiv"><a href="./tutorial.html">Back to Tutorials</a></div>
+    <hr>
+
+    <div class="mainDiv">
+        <h3>JavaScript Arithmetic Operators</h3>
+        <p><b>Arithmetic Operators</b> are used to perform arithmetic on numbers:</p>
+        <p>A typical arithmetic operation takes two numbers (or expressions) and produces a new number.</p>
+        <p>Here we made a paragraph with an id, initialize two variables with "let a = 3;" and "let x = (100+50) * a;" and then
+            change the html of the paragraph to display x.</p>
+
+        <p id="arithDemo"></p>
+
+        <script>
+            let a = 3;
+            let x = (100 + 50) * a;
+            document.getElementById("arithDemo").innerHTML = x;
+        </script>
+
+        <p>Operators include:</p>
+        <table>
+            <th style="width:50%">Operator</th>
+            <th style="width:50%">Description</th>
+            <tr>
+                <td>+</td>
+                <td>addition</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>subtraction</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>multiplication</td>
+            </tr>
+            <tr>
+                <td>**</td>
+                <td>exponentiation</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>division</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>modulus (remainder from division)</td>
+            </tr>
+            <tr>
+                <td>++</td>
+                <td>increment</td>
+            </tr>
+            <tr>
+                <td>--</td>
+                <td>decrement</td>
+            </tr>
+            
+        </table>
+    </div>
+
+    <div class="mainDiv">
+        <h3>JavaScript String Addition</h3>
+        <p>The + can also be used to add (concatenate) strings:</p>
+        <p>Here we made a paragraph with an id, initialize three variables with 'let text1 = "John";'' and 'let text2 = "Doe";', and 
+            'let text3 = text1 + " " + text3;' and then change the html of the paragraph to display text3.</p>
+        <p id="stringAdtnDemo"></p>
+
+        <script>
+            let text1 = "John";
+            let text2 = "Doe";
+            let text3 = text1 + " " + text2;
+            document.getElementById("stringAdtnDemo").innerHTML = text3;
+        </script>
+
+        <hr class="divHr">
+
+        <h3>Concatination</h3>
+        <p>The += assignment operator can also be used to add (concatenate) strings:</p>
+        <p>Here we made a paragraph with an id, initialize one variable with 'let text4 = "What a very ";' and then write 
+            'text4 += "nice day"', and then change the html of the paragraph to display text3.</p>
+        <p id="stringAdtnDemo2"></p>
+        <script>
+            let text4 = "What a very ";
+            text4 += "nice day";
+            document.getElementById("stringAdtnDemo2").innerHTML = text4;
+        </script>
+
+        <hr class="divHr">
+
+        <h3>Adding Strings and Numbers</h3>
+        <p>Adding two numbers, will return the sum as a number like 5 + 5 = 10. Adding a number and a string, will return the 
+            sum as a concatenated string like 5 + "5" = "55".</p>
+        <p>Here we have a paragraph with an id, and initialized three variables; one containing the number 5, one containing a 
+            concatination of a string containing "5" and a number 5, and one containing a the word "Hello" concatinated with the 
+            number 5. The paragraph html is changed to display each of on a new line.
+        </p>
+            <p id="strngAndNumbrDemo"></p>
+
+        <script>
+            let num1 = 5 + 5;
+            let string1 = "5" + 5;
+            let numAndString = "Hello" + 5;
+            document.getElementById("strngAndNumbrDemo").innerHTML = num1 + "<br>" + string1 + "<br>" + numAndString;
+        </script>
+
+        <hr class="divHr">
+
+        <h3>Addition Assignment Operator</h3>
+        <p>The Addition Assignment Operator (+=) adds a value to a variable.</p>
+        <p>Here we have a paragraph with an id, and initialized one variable (n1) containing the number 10. We then write 'n1 += 5;''
+            to add 5 to the value n1 already holds. The paragraph html is changed to display n1.</p>
+
+        <p id="AssgmntOpDemo"></p>
+
+        <script>
+            let n1 = 10;
+            n1 += 5;
+            document.getElementById("AssgmntOpDemo").innerHTML = n1;
+        </script>
+
+        <p>NOTE: The <b>(+=)</b> operator can both concatinate strings and add value to a variable.</p>
+        <p>NOTE: other operator symbols (-=, *=, /=, **=, %=, etc) work in the same way.</p>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Comparison Operators</h3>
+        <p>Comparison operators are used to compare two values. Comparison operators always return true or false.</p>
+        <p><b>The > (greater than) Operator</b></p>
+
+        <p>Assign 5 to myNum, and display the value of the comparison (myNum > 8).</p>
+        
+        <p id="compDemo"></p>
+
+        <script>
+            let myNum = 5;
+            document.getElementById("compDemo").innerHTML = (myNum > 8);
+        </script>
+
+        <table>
+            <th style="width:50%">Operator</th>
+            <th style="width:50%">Description</th>
+            <tr>
+                <td>==</td>
+                <td>equal to</td>
+            </tr>
+            <tr>
+                <td>===</td>
+                <td>equal value and equal type</td>
+            </tr>
+            <tr>
+                <td>!=</td>
+                <td>not equal</td>
+            </tr>
+            <tr>
+                <td>!==</td>
+                <td>not equal value or not equal type</td>
+            </tr>
+            <tr>
+                <td>></td>
+                <td>greater than</td>
+            </tr>
+            <tr>
+                <td>&lt</td>
+                <td>less than</td>
+            </tr>
+            <tr>
+                <td>>=</td>
+                <td>greater than or equal to</td>
+            </tr>
+            <tr>
+                <td>&lt=</td>
+                <td>less than or equal to</td>
+            </tr> 
+        </table>
+
+        <hr class="divHr">
+
+        <p><b>All conditional operators can be used on both numbers and strings.</b></p>
+        <p>Here we have a paragraph with an id, and initialized some text variables. One contains "A", the other contains "B". 
+            A new variable called result compares them as "let result = text5 &tl text6;". The paragraph html is changed to display result.</p>
+
+        <p id="textCompDemo"></p>
+
+        <script>
+            let text5 = "A";
+            let text6 = "B";
+            let result = text5 < text6;
+            document.getElementById("textCompDemo").innerHTML = "Is A less than B? " + result;
+        </script></p>
+
+        <p>NOTE: strings are compared alphabetically. </p>
+
+    </div>
+
+    <div class="mainDiv">
+
+        <h3>Logical Operators</h3>
+
+        <table>
+            <th style="width:50%">Operator</th>
+            <th style="width:50%">Description</th>
+            <tr>
+                <td>&&</td>
+                <td>logical and</td>
+            </tr>
+            <tr>
+                <td>||</td>
+                <td>logical or</td>
+            </tr>
+            <tr>
+                <td>!</td>
+                <td>logical not</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+</body>

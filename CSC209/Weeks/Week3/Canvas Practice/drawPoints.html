@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <h1>Draw 3 Nice Points</h1>
+
+    <canvas id="pointsCanvas" width="600" height="500" style="border:1px solid #000000"></canvas>
+
+    <div>
+        <script>
+            const classRoster = ["Reed", "Tabz", "Ani", "Catherine", "Jennifer"];
+            const canvas = document.getElementById("pointsCanvas");
+            const ctx = canvas.getContext("2d");
+            ctx.strokeStyle = "blue";
+
+            //Working on making the points a class (did not implement yet)
+            const POINTSTYLE = "blue";
+            const POINTRADIUS = 40;
+
+            class Point{
+                constructor(x,y){
+                    this.x = x;
+                    this.y = y;
+                };
+
+                translate(x,y){
+                    this.x = this.x+x;
+                    this.y=this.y+y
+                };
+
+                drawC(ctx){
+                    ctx.stokrStyle = POINTSTYLE;
+                    ctx.beginPath;
+                    ctx.arc(this.x - POINTRADIUS, this.y-POINTRADIUS, POINTRADIUS, 0, 2*MATH.PI);
+                    ctx.stroke();
+                };
+            }
+
+            //point 1
+            ctx.beginPath();
+            ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.font = "15px Arial";
+            ctx.fillText(classRoster[0],95-40,50+5);
+
+            //point 2
+            ctx.beginPath();
+            ctx.arc(190, 50, 40, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.font = "15px Arial";
+            ctx.fillText(classRoster[1],190-40,50+5);
+
+            //point 3
+            ctx.beginPath();
+            ctx.arc(285, 50, 40, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.font = "15px Arial";
+            ctx.fillText(classRoster[2],285-40,50+5);
+
+        </script>
+    </div>
+</body>

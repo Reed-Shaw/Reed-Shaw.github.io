@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<head>
+    <title>JS HTML Events Tutorial</title>
+    <link rel="stylesheet" href="basicTutorial.css">
+</head>
+
+<body>
+    <div class="headerDiv"><a href="./tutorial.html">Back to Tutorials</a></div>
+    <hr>
+
+    <div class="mainDiv">
+        <h2>JavaScript HTML Events</h2>
+        <h3>HTML Events</h3>
+        <p>HTML events are things that happen to HTML elements.</p>
+        <p>Examples of HTML events include:</p>
+        <ul>
+            <li>An HTML button is clicked</li>
+            <li>A web page has finished loading</li>
+            <li>The mouse moves over an element</li>
+            <li>A keyboard key is pressed</li>
+            <li>An HTML input field is changed</li>
+        </ul>
+        <p>HTML DOM allows JavaScript to react to HTML events.</p>
+        <hr class="divHr">
+
+        <h3>JavaScript Events</h3>
+        <p>When JavaScript is used in HTML pages, JavaScript can react on events. JavaScript lets you execute code when events are 
+            detected. HTML allows event handler attributes, with JavaScript code, to be added to HTML elements.</p>
+        <p><b>Syntax</b></p>
+        <p>With single quotes:</p>
+        <p><element event='some JavaScript'></p>
+        <p>With double quotes:</p>
+        <p><element event="some JavaScript"></p>
+        <p></p>
+        <hr class="divHr">
+
+        <h3>Calling a JavaScript Function</h3>
+        <p>JavaScript code can often be several lines long. It is more common to use the event attribute to call a function.</p>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Common HTML Events</h3>
+        <table>
+            <th style="width:50%">Event</th>
+            <th style="width:50%">Description</th>
+            <tr>
+                <td>onchange</td>
+                <td>An HTML element has been changed</td>
+            </tr>
+            <tr>
+                <td>onclick</td>
+                <td>The user clicks an HTML element</td>
+            </tr>
+            <tr>
+                <td>onmouseover</td>
+                <td>The user moves the mouse over an HTML element</td>
+            </tr>
+            <tr>
+                <td>onmouseout</td>
+                <td>The user moves the mouse away from an HTML element</td>
+            </tr>
+            <tr>
+                <td>onkeydown</td>
+                <td>The user pushes a keyboard key</td>
+            </tr>
+            <tr>
+                <td>onload</td>
+                <td>The browser has finished loading the page</td>
+            </tr>   
+        </table>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Using an Event Listener</h3>
+        <p>It's reccomended that instead of using something like 'onclick', we should use addEventListener() as a way to handle events.</p>
+        <p>The addEventListener() method keeps HTML and JavaScript separated.</p>
+        <p></p>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Mouse Events</h3>
+        <h4>Mouseover and Mouseout Example</h4>
+        <div id="box"
+        style="width:200px;height:100px;padding:16px;border:1px solid #000;">
+        Move mouse over this box!
+        </div>
+
+        <script>
+            const box = document.getElementById("box");
+
+            // Let box listen for mouseover
+            box.addEventListener("mouseover", function () {
+                box.innerHTML = "Mouse is over me!";
+            });
+
+            // Let box listen for mouseout
+            box.addEventListener("mouseout", function () {
+                box.innerHTML = "Mouse is out!";
+            });
+        </script>
+        <hr class="divHr">
+
+        <h4>Mouse Position Example</h4>
+        <p>The MouseEvent interface provides an event object which contains useful properties like pointer coordinates, which mouse 
+            button are pressed, and more.</p>
+        <p id="mousePositionDemo">Move the mouse in this window!</p>
+
+        <script>
+            // Let document listen for mousemove
+            document.addEventListener("mousemove", function (event) {
+                document.getElementById("mousePositionDemo").innerHTML =
+                "X: " + event.clientX + " Y: " + event.clientY;
+            });
+        </script>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Keyboard Events</h3>
+        <p>Keyboard Events happen when the user presses a key on the keyboard:</p>
+        <p>keydown (key is pressed down)</p>
+        <p>keyup (key is released)</p>
+        <p>keypress (deprecated)</p>
+        <p>Note: keypress only fires for character keys (a or 5), not for control keys (alt or backspace). Use one of the other two 
+            instead.
+        </p>
+        <hr class="divHr">
+
+        <h3>The Keydown Event Example</h3>
+        <input id="k" type="text" placeholder="Press a key here!">
+
+        <p id="keydownDemo"></p>
+
+        <script>
+            const k = document.getElementById("k");
+
+            // Let k listen for keydown
+            k.addEventListener("keydown", function (event) {
+                document.getElementById("keydownDemo").innerHTML = "You pressed: " + event.key;
+            });
+        </script>
+        <hr class="divHr">
+
+        <h3>Detect Enter Example</h3>
+        <input id="in01" type="text" placeholder="Press Enter">
+
+        <p id="detectEnterDemo"></p>
+
+        <script>
+            const in01 = document.getElementById("in01");
+
+            // Let in01 listen for keydown
+            in01.addEventListener("keydown", function (event) {
+            // If key was "enter", then display text
+            if (event.code === "Enter") {
+                document.getElementById("detectEnterDemo").innerHTML = "Enter was pressed!";
+            }
+            });
+        </script>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Load Events</h3>
+        <p>Load Events happen when the browser has finished loading an element.</p>
+        <p>The two most important load events:</p>
+        <p>DOMContentLoaded (when HTML is ready)</p>
+        <p>load (waits for pages, images, CSS, etc.)</p>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Event Listener</h3>
+        <p>The addEventListener() method attaches an event handler to the specified element.</p>
+        <p>You can add many event handlers (even of the same type i.e two "click" events) to one element.</p>
+        <p>You can easily remove an event listener by using the removeEventListener() method.</p>
+        <p><b>Syntax</b></p>
+        <p>element.addEventListener(event, function, useCapture);</p>
+    </div>
+</body>

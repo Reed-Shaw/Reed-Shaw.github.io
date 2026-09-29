@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <title>Hw3 Creative Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link id="theme" rel="stylesheet" href="./Css/creative.css"> 
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <h1>Hw3 Creative</h1>
+        </header>
+        <ul id="navBar" class="leftsidenav">
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="../hw3.html">Back to Hw3</a></li>
+        </ul>
+        <ul id="buttonsBar" class="rightbox">
+            <li><button  type="button" class="niceButton" onclick="drawRed()">Change Color to Red</button></li>
+            <li><button  type="button" class="niceButton" onclick="drawBlue()">Change Color to Blue</button></li>
+        </ul>
+        <h2 class="center">Here is a Canvas!</h2>
+        <p class="center">Click anywhere in the canvas to draw a circle!</p>
+        <div class="inside">
+            <!--Debugging area to make sure myX and myY were working (see creative.js)
+            <p id="testingArea">Hello!</p> 
+            <p id="testingArea2">Bye!</p> -->
+            <canvas id="pointsCanvas" width="600" height="350" style="border:1px solid #000000"></canvas>
+        </div>
+     </div>
+     <script src="./JavaScript/creative.js"></script>
+</body>

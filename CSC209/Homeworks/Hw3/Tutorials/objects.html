@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<head>
+    <title>JS Objects Tutorial</title>
+    <link rel="stylesheet" href="basicTutorial.css">
+</head>
+
+<body>
+    <div class="headerDiv"><a href="./tutorial.html">Back to Tutorials</a></div>
+    <hr>
+
+    <div class="mainDiv">
+        <h2>JavaScript Objects</h2>
+        <p>Objects are variables that can store both values and functions.</p>
+        <p>Values are stored as key:value pairs called properties.</p>
+        <p>Functions are stored as key:function() pairs called methods.</p>
+        <hr class="divHr">
+
+        <h3>Object Example</h3>
+        <p>This code example assigns many values (Fiat, 500, white) to an object named car:</p>
+        <p>const car = {<br>
+            type: "Fiat",<br>
+            model: "500",<br>
+            color: "white"<br>
+        };<br></p>
+        <p>Here we use the previous code and call 'car.type' to get the type of car:</p>
+        <p id="objectCarDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            // Create an Object:
+            const car = {
+                type:"Fiat",
+                model:"500",
+                color:"white"
+            };
+
+            // Display Data from the Object:
+            document.getElementById("objectCarDemo").innerHTML = "The car type is " + car.type;
+        </script>
+        <p>type, model, and color are properties</p>
+        <p>"Fiat", "500", and "white" are property values</p>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Object Literal</h3>
+        <p>An object literal "literally" describes an object using a concise syntax with zero or more key:value pairs inside curly
+            braces to describe all the object properties: <br>{firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}</p>
+        <p>An object literal is the simplest and most common way to define a JavaScript object:</p>
+        <p>const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};</p>
+        <p>You can also create an empty object, and add the properties later:</p>
+        <p>// Create an Object <br>
+            const person = {}; <br>
+            // Add Properties <br>
+            person.firstName = "John"; <br>
+            person.lastName = "Doe"; <br>
+            person.age = 50; <br>
+            person.eyeColor = "blue"; <br></p>
+        <p>Note: You should declare objects with the <b>const</b> keyword.</p>
+        <hr class="divHr">
+
+        <h3>Using the <b>new</b> Keyword</h3>
+        <p>Create a new JavaScript object using new Object():<br>
+            // Create an Object<br>
+            const person = new Object({<br>
+                firstName: "John",<br>
+                lastName: "Doe",<br>
+                age: 50,<br>
+                eyeColor: "blue"<br>
+            });<br></p>
+        <p>NOTE: There is no need to use new Object(). Just use object literals instead.</p>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Object Properties</h3>
+        <p>You can access object properties in two ways:</p>
+        <ul>
+            <li>Dot Notation</li>
+            <li>Bracket Notation</li>
+        </ul>
+        <p>Dot Notation:<br>
+            objectName.propertyName<br>
+            person.firstName;</p>
+        <p>Bracket Notation:<br>
+            objectName["propertyName"]<br>
+            person["firstName"];</p>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Object Methods</h3>
+        <p>Objects can also have methods. Object methods are actions that can be performed
+            on objects. Object methods are function definitions stroed as property values.
+        </p>
+        <h3>Example</h3>
+        <p>Here, the object 'person' contains a method called 'fullName' that returns the 
+            full name of the person. The function is used outside the person object. 
+        </p>
+        <p id="objectMethodsDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            const person = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 50,
+                fullName: function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            };
+
+            document.getElementById("objectMethodsDemo").innerHTML = person.fullName();
+        </script>
+        <hr class="divHr">
+        <p>In an object method, this refers to the object. In the example above, this refers to 
+            the person object. </p>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Changing Properties</h3>
+        <p>You can change the value of a property outside of its object initialization.</p>
+        <hr class="divHr">
+
+        <h3>Adding New Properties</h3>
+        <p>You can add new properties outside of the object initialization by giving it a value:</p>
+        <p>person.nationality = "English";</p>
+        <hr class="divHr">
+
+        <h3>Deleting Properties</h3>
+        <p>The <b>delete</b> keyword deletes a property from an object:</p>
+        <p>delete person.age;</p>
+        <p>This occurs outside object initialization.</p>
+        <p>Note: The delete keyword deletes both the value and the property.</p>
+        <p>After deleting, the property is removed. Accessing it will return <b>undefined</b>.</p>        
+        <hr class="divHr">
+
+        <h3>Check if a Property Exists</h3>
+        <p>Use the in operator to check if a property exists in an object:</p>
+        <p>const person = {<br>
+            firstName: "John",<br>
+            lastName: "Doe"<br>
+        };<br>
+        let result = ("firstName" in person);<br></p>
+        <p>That code snippet returns 'true'.</p>
+        <hr class="divHr">
+
+        <h3>Nested Objects</h3>
+        <p>Property values in an object can be other objects:</p>
+        <p>myObj = {<br>
+            name:"John",<br>
+            age:30,<br>
+            myCars: {<br>
+                car1:"Ford",<br>
+                car2:"BMW",<br>
+                car3:"Fiat"<br>
+            }<br>
+        }</p>
+        <p>You can access nested objects using the dot notation or the bracket notation:</p>
+        <p>myObj.myCars.car2;</p>
+        <p>myObj.myCars["car2"];</p>
+    </div>
+
+    <div class="mainDiv">
+        <h3>The <b>this</b> Keyword</h3>
+        <p>In an object method, this refers to the object. Ex:</p>
+        <p>const person = {<br>
+            firstName: "John",<br>
+            lastName: "Doe",<br>
+            id: 5566,<br>
+            getId: function() {<br>
+                return this.id;<br>
+            }<br>
+        };<br>
+
+        let number = person.getId();</p>
+        <p>In the example above, <b>this</b> refers to the person object. this.id means the id
+            property of the person object.</p>
+        <p>The this keyword makes it possible to use the same method with different objects.</p>
+        <p>When used alone, this refers to the global object. In a browser, the global object is the 
+            window object.</p>
+        <p>In a regular function, this also refers to the global object.</p>
+        
+        <hr class="divHr">
+
+        <h3>Adding a Method to an Object</h3>
+        <p>You can add a method to an object by assigning a function to a property:</p>
+        <p>person.name = function () {<br>
+            return this.firstName + " " + this.lastName;<br>
+        };</p>
+        <p>In the example above, person.name is a property with a function assigned to it.</p>
+    </div>
+
+    <div class="mainDiv">
+        <h3>Object Constructor Functions</h3>
+        <p>Sometimes we need to create many objects of the same type. To create an object type we use an 
+            object constructor function. It is considered good practice to name constructor functions with 
+            an upper-case first letter.</p>
+        <h3>Example</h3>
+        <p>Object Type Person</p>
+        <p>function Person(first, last, age, eye) {<br>
+            this.firstName = first;<br>
+            this.lastName = last;<br>
+            this.age = age;<br>
+            this.eyeColor = eye;<br>
+        }</p>
+        <p>Note:In the constructor function, this has no value. The value of this will become the 
+            new object when a new object is created.</p>
+        <p>Now we can use new Person() to create many new Person objects:</p>
+        <p>const myFather = new Person("John", "Doe", 50, "blue");</p>
+        <p>const myMother = new Person("Sally", "Rally", 48, "green");</p>
+        <hr class="divHr">
+
+        <h3>Property Default Values</h3>
+        <p>A value given to a property will be a default value for all objects created by the constructor.</p>
+        <hr class="divHr">
+
+        <h3>Adding a Property to a Constructor</h3>
+        <p>You can <b>NOT</b> add a new property to an object constructor.</p>
+        <p>To add a new property, you must add it to the constructor function prototype:</p>
+        <p>Person.prototype.nationality = "English";</p>
+        <hr class="divHr">
+
+        <h3>Constructor Function Methods</h3>
+        <p>A constructor function can also have methods.</p>
+        <hr class="divHr">
+
+        <h3>Adding a Method to an Opject</h3>
+        <p>Adding a method to an opject is possible. Ex:</p>
+        <p>myMother.changeName = function (name) {<br>
+            this.lastName = name;<br>
+        }</p>
+        <hr class="divHr">
+
+        <h3>Adding a Method to a Constructor</h3>
+        <p>You cannot add a new method to an object constructor function.</p>
+        <p>Adding a new method to a constructor must be done to the constructor function prototype:</p>
+        <p>Person.prototype.changeName = function (name) {<br>
+            this.lastName = name;<br>
+        }</p>
+
+
+    </div>
+    
+</body>

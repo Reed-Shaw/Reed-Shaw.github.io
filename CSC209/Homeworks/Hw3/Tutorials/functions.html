@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<head>
+    <title>Functions Tutorial</title>
+    <link rel="stylesheet" href="basicTutorial.css">
+</head>
+
+<body>
+    <div class="headerDiv"><a href="./tutorial.html">Back to Tutorials</a></div>
+    <hr>
+
+    <div class="mainDiv">
+        <h2>JavaScript Functions</h2>
+        <p>Functions are reuseable code blocks designed to perform a particular task. Functions are executed when they are called or 
+            invoked. Functions are fundamental in all programming languages.</p>
+        <p><b>Syntax</b></p>
+        <p>function myFunction( p1, p2, ... ) { <br>
+            // code to be executed <br>
+        }<br>
+        </p>
+        <p>To run a function, you call it by using its name followed by parentheses like myFunction( p1, p2, ... )</p>
+        <p>Note: putting parameters inside the function is optional. You can also have as many parameters as you like, as long as 
+            they're seperated by commas.</p>
+        <p>A function can be called many times and values returned from functions can be stored in variables.</p>
+        <hr class="divHr">
+
+        <h3>Local Variables</h3>
+        <p>Variables declared within a JavaScript function, become LOCAL to the function. Local variables can only be accessed from 
+            within the function.</p>
+        <p>Since local variables are only recognized inside their functions, variables with the same name can be used in different 
+            functions. Local variables are created when a function starts, and deleted when the function is completed.</p>
+        <hr class="divHr">
+
+        <h3>Functions Used as Variables</h3>
+        <p>Functions can be used as variables, in all types of formulas, assignments, and calculations.</p>
+        <p>Instead of writing the function to a variable: <br><br> let x = toCelsius(77);<br>
+        let text = "The temperature is " + x + " Celsius"; <br><br>
+        you can write the function directly as a varibale:<br><br>
+        let text = "The temperature is " + toCelsius(77) + " Celsius";</p>
+        <hr class="divHr">
+
+        <h3>Functions can be Called From Anywhere</h3>
+        <p>You can call functions from other functions, from events, or from any code block.</p>
+        <h3>Example</h3>
+        <p></p>
+        <button onclick="showHello()">Click Me</button>
+
+        <p id="functionDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            function sayHello() {
+            return "Hello World";
+        }
+
+        function showHello() {
+            document.getElementById("functionDemo").innerHTML = sayHello();
+        }
+        </script>
+        <hr class="divHr">
+
+        <h3>Function Parameter Rules</h3>
+        <p>JavaScript function definitions <b>do not</b> specify data types for parameters. JavaScript functions <b>do not</b> perform type 
+            checking on the arguments. JavaScript functions <b>do not</b> check the number of arguments received.</p>
+        <hr class="divHr">
+        <h3 id="defaultParameterValue">Default Parameter Values</h3>
+        <p>ECMAScript 2015 allows function parameters to have default values. The default value is used if no argument is provided.</p>
+        <p>For example, if y is not passed or is undefined for the function below, then y = 10.</p>
+        <p>function myFunction(x, y = 10) {<br>
+            return x + y;<br>
+        }<br>
+        myFunction(5);<br></p>
+        <hr class="divHr">
+
+        <h3>The <b>return</b> Statement</h3>
+        <p>When a function reaches a return statement, the function stops executing. The value after the return keyword is sent back to 
+            the caller.</p>
+        <p>Most functions will return the result of a calculation or an operation.</p>
+        <p>The returned value can be used anywhere a value is expected, and the value can be of any type</p>
+        <p>You can use a function call inside another expression.</p>
+        <p>Note: If a function does not return a value, the return value will be undefined.</p>
+        <p>You can use return to stop a function early, based on a condition. For example, in for loops.</p>
+        <hr class="divHr">
+
+        <h3>The Arguments Object</h3>
+        <p>JavaScript functions have a built-in object called the arguments object. The argument object contains an array of the 
+            arguments used when the function was called (invoked). This way you can simply use a function to find (for instance) the 
+            highest value in a list of numbers.</p>
+        <h3>Example</h3>
+        <p>In this example, the function is not written with parameters- function findMax(). But the function is called with arguments- 
+            document.getElementById("argumentsDemo").innerHTML = <b>findMax(4, 5, 6)</b>;. The rest of the function uses the "arguments" 
+            object in order to find the largest number in the given arguments. 
+        </p>
+        <p id="argumentsDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+            function findMax() {
+                let max = -Infinity;
+                for(let i = 0; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                    max = arguments[i];
+                    }
+                }
+                return max;
+            } 
+            document.getElementById("argumentsDemo").innerHTML = findMax(4, 5, 6);
+        </script>
+        <p>If a function is called with too many arguments (more than declared), these arguments can be reached using the arguments 
+            object.</p>
+        <p>Note: Arguments are assigned to parameters in the order they appear.</p>
+        <p>Arguments can be values or variables.</p>
+        <hr class="divHr">
+
+        <h3>Argument Rules</h3>
+        <p>JavaScript function definitions <b>do not</b> specify data types for arguments. JavaScript functions <b>do not</b> perform 
+            type checking on the passed arguments. JavaScript functions <b>do not</b> check the number of arguments received.</p>
+        <p>If a function is called with fewer arguments than parameters, the missing values become undefined.</p>
+        <p>If a function is called with missing arguments (less than declared), the missing values are set to undefined. Sometimes this 
+            is acceptable, but sometimes it is better to <a href="#defaultParameterValue">a default value to the parameter</a>.</p>
+        <hr class="divHr">
+
+        <h3>Function Rest Parameter</h3>
+        <p>The rest parameter (...) allows a function to treat an indefinite number of arguments as an array:</p>
+        <p>function sum(...args) {<br>
+            let sum = 0;<br>
+            for (let arg of args) sum += arg;<br>
+            return sum;<br>
+        }<br>
+        <br>
+        let x = sum(4, 9, 16, 25, 29, 100, 66, 77);<br></p>
+        <hr class="divHr">
+
+        <h3>Arguments are Passed by Value</h3>
+        <p>If a function changes an argument's value, it does not change the parameter's original value. Changes to arguments are 
+            not visible (reflected) outside the function.</p>
+        <hr class="divHr">
+
+        <h3>Objects are Passed by Reference</h3>
+        <p>In JavaScript, object references are values. Because of this, objects will behave like they are passed by reference: 
+            If a function changes an object property, it changes the original value. Changes to object properties are visible (reflected)
+            outside the function.</p>
+        <hr class="divHr">
+
+        <h3>Function Expressions</h3>
+        <p>A function expression is a function stored in a variable, ex: </p>
+        <p>const multiply = function(a, b) {<br>
+            return a * b;<br>
+        };<br></p>
+        <h3>Example</h3>
+        <p>After a function expression has been stored in a variable, the variable can be used as a function. Here, the variable 'z'
+            = multiply(4,3) so when we write 'document.getElementById("funcExpressDemo").innerHTML = z;' z is used as a function. 
+ 
+        </p>
+        <p id="funcExpressDemo" style="color: rgb(0, 94, 30);"></p>
+
+        <script>
+        const multiply = function (a, b) {return a * b};
+
+        let z = multiply(4, 3);
+
+        document.getElementById("funcExpressDemo").innerHTML = z;
+        </script>
+        <hr class="divHr">
+
+        <h3>Anonymous Functions</h3>
+        <p>Function expressions are commonly used to create anonymous functions. The function above is actually function without a name. 
+            Functions stored in variables do not need names. The variable name is used to call the function.</p>
+        <p>But, function expressions can also be a named:</p>
+        <p>const add = function add(a, b) {return a + b;};</p>
+        <p>Function expressions use semicolons because they are JavaScript statements.</p>
+        <p>Because a function expression is stored in a variable, it can be used like a value. This is useful when passing functions 
+            to other functions (callbacks). A function expression can be assigned to a variable, passed as an argument to another 
+            function, or returned from a function.</p>
+        <hr class="divHr">
+        
+        <h3>Hoisting</h3>
+        <p>Function declarations <b>can</b> be called before they are defined.</p>
+        <p>Function expressions <b>can not</b> be called before they are defined. </p>
+        <p>Function declarations are "hoisted" to the top of their scope. This means you can call a function before it is defined in 
+            the code.</p>
+            
+        
+    </div>
+
+</body>
