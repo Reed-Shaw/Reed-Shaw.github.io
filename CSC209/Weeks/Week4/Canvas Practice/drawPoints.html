@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<head>
+    <title> Week4 Canvas Practice </title>
+    <script>
+        //Styling points and canvas
+        const POINTSTYLE = "blue";
+        const POINTRADIUS = 10;
+        const HEIGHT = 500;
+        const WIDTH = 600;
+        const NUMPTS = 10;
+        const EDGES = 0 ;
+        //Making an array to add names to the circles.
+        const classRoster = ["Reed", "Tabz", "Ani", "Catherine", "Jennifer"];
+    </script>
+    <script>
+        //Utility functions
+        function getRandomX(){
+            let x = Math.floor(Math.random() * (WIDTH+1));
+            return x;
+        }
+        function getRandomY(){
+            let y = Math.floor(Math.random() * (HEIGHT+1));
+            return y;
+        }
+    </script>
+    <script>
+        //Classes
+        class Point{
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+            };
+
+            getX(){
+                return this.x;
+            }
+                
+            getY(){
+                return this.y;
+            }
+
+            drawC(ctx){
+                //ctx.beginPath;
+                ctx.strokeStyle = POINTSTYLE;
+                //Using moveTo and lineTo to stop the circles from having lines connecting them. 
+                ctx.moveTo(this.x, this.y - POINTRADIUS);
+                ctx.lineTo(this.x, this.y - POINTRADIUS);
+                ctx.arc(this.x - POINTRADIUS, this.y-POINTRADIUS, POINTRADIUS, 0, 2*Math.PI);
+                ctx.stroke();
+            };
+        }
+
+        //Class that has several points
+        class Points extends Array {
+            constructor(numPts){
+                super(numPts);
+            };
+            drawC(ctx){
+                //Put all the points in the array
+                for(let i = 0; i < this.length; i++){
+                    this[i] = new Point(getRandomX(), getRandomY());
+                    this[i].id = "point" + i;
+                }
+                //Draw all of the points in the array
+                for(let i = 0; i < this.length ; i++){
+                    this[i].drawC(ctx);
+                }
+
+            }
+        }
+        //Class that makes an edge
+        class Edge{
+            constructor(point1, point2){
+                this.point1 = point1;
+                this.point2 = point2;
+            }
+
+            drawEdge(ctx){
+                ctx.beginPath;
+                ctx.moveTo(this.point1.x, this.point1.y);
+                ctx.lineTo(this.point2.y, this.point2.y);
+                ctx.stroke;
+            }
+        }
+
+        //Class that connects several points with edges
+        class Edges {
+            constructor(arrPoints){
+                this.arrPoints = arrPoints;
+            }
+
+            drawEdge(ctx){
+                
+                for(let i = 0; i < this.arrPoints.length; i++){
+                    console.log(this.arrPoints[i]);
+                    ctx.beginPath;
+                    ctx.moveTo(this.arrPoints[i].x, this.arrPoints[i].y - POINTRADIUS);
+                    ctx.lineTo(this.arrPoints[i+1].x, this.arrPoints[i+1].y - POINTRADIUS);
+                    ctx.stroke();
+                    i = i+1;
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Draw 3 Nice Points</h1>
+
+    <div id="pts">PTS: </div>
+    <div id="edges">EDGES: </div>
+    <canvas id="pointsCanvas" width="600" height="500" style="border:1px solid #000000"></canvas>
+
+    <div>
+        <script>
+            //Initializing the canvas and canvas related elements
+            const canvas = document.getElementById("pointsCanvas");
+            const ctx = canvas.getContext("2d");
+            ctx.beginPath;
+            ctx.strokeStyle = "blue";
+            document.getElementById("pts").innerText += " " + NUMPTS;
+            document.getElementById("edges").innerText += " " + EDGES;
+            
+            const myPoints = new Points(NUMPTS);
+            myPoints.drawC(ctx);
+            console.log("Number of points = " + NUMPTS);
+            const myEdges = new Edges(myPoints);
+            myEdges.drawEdge(ctx);
+
+           /*const myPoint1 = new Point(getRandomX(), getRandomY());
+           myPoint1.drawC(ctx);
+           const myPoint2 = new Point(300, 100);
+           myPoint2.drawC(ctx);
+           const myEdge = new Edge(myPoint1, myPoint2);
+           myEdge.drawEdge(ctx);
+           */
+           
+
+        </script>
+    </div>
+</body>

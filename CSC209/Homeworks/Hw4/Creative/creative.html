@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <title>Hw4 Technical</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link id="theme" rel="stylesheet" href="./css/creative.css"> 
+    <!--Declare NRPTS and NREDGES-->
+    <script>
+        const NUMEDGES = 3;
+        const NUMPTS = 6;
+    </script>
+    <!--Import javascript files-->
+    <script src="./js/classes.js"></script>
+    <script src="./js/graphicsFunctions.js"></script>
+    <script src="./js/helperFunctions.js"></script>
+    <script src="./js/modifyDOM.js"></script>
+    <script src="./js/graphicsConstants.js"></script>
+    
+</head>
+<body>
+    <ul id="navBar" class="leftsidenav">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="../hw4.html">Back to Hw4</a></li>
+    </ul>
+    <div id="myDiv" class="content">
+        <header><h1 class="center">Draw Graphs</h1></header>
+        <ul id="buttonsBar" class="rightbox">
+            <li><button  type="button" class="niceButton" onclick="drawRed()">Change Color to Red</button></li>
+            <li><button  type="button" class="niceButton" onclick="drawBlue()">Change Color to Blue</button></li>
+            <li><button  type="button" class="niceButton" onclick="drawPurple()">Change Color to Purple</button></li>
+        </ul>
+        <div id="pts"><b>PTS:</b> </div>
+        <div id="edges"><b>EDGES:</b> </div>
+        <div class="center"> 
+            <button type="button" class="niceButton" id="drawPointsButton" onclick="drawCircle(ctx, NUMPTS)">Draw points</button>
+            <button type="button" class="niceButton" id="randomizePointsButton" onclick="randomizePoints(ctx, NUMPTS)">Randomize Points</button>
+            <button type="button" class="niceButton" id="clearGraphButton" onclick="clearGraph()">Clear Graph</button>
+        </div>
+        <div class="center">
+            <canvas id="pointsCanvas" width="600px" height="400px" style="border:1px solid #000000"></canvas>
+        </div>
+        <script>
+            makeCanvas(NUMPTS, NUMEDGES);
+        </script>
+
+        <div class="center">            
+            <button type="button" class="niceButton" id="displayCoordsButton" onclick="displayCoordinates()">Display Point Coordinates</button>
+        </div>
+        <div class="center" id="displayCoordinates" style="display: none;"> </div>
+    </div>
+
+</body>

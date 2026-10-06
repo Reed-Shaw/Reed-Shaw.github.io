@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clear Canvas Tutorial</title>
+        <link rel="stylesheet" href="./css/tutorials.css">
+    </head>
+    <body>
+        <div class="headerDiv"><a href="./tutorials.html">Back to Tutorials</a></div>
+        <hr>
+        <div class="mainDiv">
+            <h1>HTML5 Canvas</h1>
+            <h2>The clearRect() Method</h2>
+            <div>
+                <button type="button" id="partialErase" onclick="ctx.clearRect(40, 40, 50, 50)">Erase Part of the Canvas</button>
+                <button type="button" id="eraseAll" onclick="ctx.clearRect(0, 0, 300, 150)">Erase all of the Canvas</button>
+            </div>
+            <canvas id="myCanvas" width="300" height="150" style="border:1px solid grey"></canvas>
+            <script>
+                const c = document.getElementById("myCanvas");
+                const ctx = c.getContext("2d");
+
+                ctx.fillStyle = "red";
+                ctx.fillRect(20, 20, 200, 100);
+            </script>
+            <p>NOTE: Always write 'beginPath()' before drawing after having used 'clearRect()'.</p>
+        </div>
+    </body>
+</html>

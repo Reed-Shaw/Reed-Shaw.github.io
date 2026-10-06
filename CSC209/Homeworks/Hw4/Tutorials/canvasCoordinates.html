@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Canvas Coordinates Tutorial</title>
+        <link rel="stylesheet" href="./css/tutorials.css">
+    </head>
+    <body>
+        <div class="headerDiv"><a href="./tutorials.html">Back to Tutorials</a></div>
+        <hr>
+        <div class="mainDiv">
+            <h1>JavaScript Events</h1>
+             <p>The MouseEvent interface provides an event object which contains useful properties like pointer coordinates, which mouse 
+            button are pressed, and more.</p>
+            <p id="mousePositionDemo">Move the mouse in this window!</p>
+
+            <script>
+                // Let document listen for mousemove
+                document.addEventListener("mousemove", function (event) {
+                    document.getElementById("mousePositionDemo").innerHTML =
+                    "X: " + event.clientX + " Y: " + event.clientY;
+                });
+            </script>
+        </div>
+    </body>
+</html>

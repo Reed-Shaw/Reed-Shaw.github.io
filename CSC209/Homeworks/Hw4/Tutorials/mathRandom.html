@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Math.Random Tutorial</title>
+        <link rel="stylesheet" href="./css/tutorials.css">
+    </head>
+    <body>
+        <div class="headerDiv"><a href="./tutorials.html">Back to Tutorials</a></div>
+        <hr>
+        <div class="mainDiv">
+            <h1>JavaScript Math</h1>
+            <h2>The Math.random() Method with Math.floor()</h2>
+
+            <p>Return a random integer between 0 and 9 (both included):</p>
+
+            <p id="mathRandomDemo" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+                document.getElementById("mathRandomDemo").innerHTML =
+                Math.floor(Math.random() * 10);
+            </script>
+        </div>
+    </body>
+</html>
