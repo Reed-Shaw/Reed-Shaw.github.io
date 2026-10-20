@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Keyboard Events Lab</title>
+        <link rel="stylesheet" href="./Css/basicTutorial.css">
+    </head>
+
+    <body>
+        <div class="headerDiv">
+            <a href="./week6.html">Back to Week 6</a>
+        </div>
+        <div class="mainDiv">
+            <h3>Keyboard Events Lab</h3>
+            <p>Keyboard Events happen when the user presses a key on the keyboard.</p>
+            <p>This includes keydown, keyup, and keypress.</p>
+        </div>
+        <div class="mainDiv">
+            <h4>The Keydown Event</h4>
+            <p>Example using event.key that will show which key is pressed:</p>
+            <input id="keydownInput" type="text" placeholder="Type a letter in here!">
+            <p id="keydownOutput"></p>
+
+            <script>
+                const key = document.getElementById("keydownInput");
+                key.addEventListener("keydown", function (event) {
+                    document.getElementById("keydownOutput").innerHTML = "You pressed: " + event.key;
+                });
+            </script>
+
+            <hr class="divHr">
+
+            <p>Example using event.key that will show all the keys that have been pressed:</p>
+            <input id="longInput" type="text" placeholder="Type in here!">
+            <p id="longOutput"></p>
+
+            <script>
+                const longOutput = document.getElementById("longInput");
+                let longOutputText = "";
+                longOutput.addEventListener("keydown", function (event) {
+                    longOutputText += event.key;
+                    document.getElementById("longOutput").innerHTML = "You pressed: " + longOutputText;
+                });
+            </script>
+        </div>
+
+        <hr class="divHr">
+
+        <div class="mainDiv">
+            <h4>Key Properties</h4>
+            <p>The KeyboardEvent object provides useful properties to determine which key was involved in the event.</p>
+            <table>
+                <th>Property</th>
+                <th>Description</th>
+                <th>When Pressing Z</th>
+                <tr>
+                    <td>event.key</td>
+                    <td>returns the value of the key <br>
+                    Can vary based in language settings.</td>
+                    <td>Returns z (or Z if shift is held)</td>
+                </tr>
+                <tr>
+                    <td>event.code</td>
+                    <td>returns the key code. <br> 
+                    constant, regardless of language settings.</td>
+                    <td>Always returns "KeyZ"</td>
+                </tr>
+            </table>
+            <p>Note: You can also detect modifier keys using properties like event.ctrlKey, event.shiftKey, 
+                    event.altKey, and event.metaKey to implement key combinations (e.g., Ctrl + S).
+            </p>
+        </div>
+
+        <hr class="divHr">
+
+        <div class="mainDiv">
+            <h4>Detect Enter</h4>
+            <p>Example of the keydown event using event.code:</p>
+            <input id="enterInput" type="text" placeholder="Press Enter.">
+            <p id="keydownDemo"></p>
+
+            <script>
+                const enterInput = document.getElementById("enterInput");
+
+                enterInput.addEventListener("keydown", function (event) {
+                    if(event.code === "Enter") {
+                        document.getElementById("keydownDemo").innerHTML = "Enter key was pressed!";
+                    }
+                });
+            </script>
+        </div>
+    </body>
+</html>

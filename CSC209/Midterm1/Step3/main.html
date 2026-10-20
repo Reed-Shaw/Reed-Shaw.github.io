@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <title>Step 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link id="theme" rel="stylesheet" href="./css/step2.css"> 
+    <!--Declare NRPTS and NREDGES-->
+    <script>
+        const NUMEDGES = 3;
+        const NUMPTS = 6;
+    </script>
+    <!--Import javascript files-->
+    <script src="./js/classes.js"></script>
+    <script src="./js/graphicsFunctions.js"></script>
+    <script src="./js/helperFunctions.js"></script>
+    <script src="./js/modDOM.js"></script>
+    <script src="./js/graphicsConstants.js"></script>
+    
+</head>
+<body>
+    <div class="content">
+        <header><h1>Random Pairings</h1></header></div>
+    <div id="myDiv" class="content">
+        <ul id="navBar" class="leftsidenav">
+            <li><button onclick="toggleMenu(this, 'info')">INFO</button></li>
+            <div id="info">
+                <p id="pts">NUMPTS: </p>
+                <p id="edges">NUMEDGES: </p>
+            </div>
+
+            <li><a href="#show">SHOW</a></li>
+            <li><a href="#generate">GENERATE</a></li>
+        </ul>
+        <div class="rightSide">
+            <!--<div id="pts"><b>PTS:</b> </div>
+            <div id="edges"><b>EDGES:</b> </div>
+            <div class="center">
+                <canvas id="pointsCanvas" width="600px" height="400px" style="border:1px solid #000000"></canvas>
+            </div>
+            <div class="center">
+                <button type="button" class="niceButton" id="exportImageButton" onclick="downloadCanvas()">Export Image of Graph</button>
+            </div>
+            <script>
+                makeCanvas(NUMPTS, NUMEDGES);
+                drawCircle(ctx, NUMPTS);
+            </script>
+        </div>
+    </div>
+
+</body>

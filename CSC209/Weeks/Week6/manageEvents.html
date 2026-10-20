@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manage Events Lab</title>
+        <link rel="stylesheet" href="./Css/basicTutorial.css">
+    </head>
+
+    <body>
+        <div class="headerDiv">
+            <a href="./week6.html">Back to Week 6</a>
+        </div>
+        <div class="mainDiv">
+            <h3>Manage Events Lab</h3>
+            <p>Event Management is about adding, removing, and controlling events.</p>
+        </div>
+
+        <hr class="divHr">
+
+        <div class="mainDiv">
+            <h4>Adding Events</h4>
+            <p>Example of adding an event listener that uses a function. When the button is clicked, a listener
+                will call the function "addEvent()" which will change the text of the button to "Clicked!".
+            </p>
+            <button id="addEventButton">Click</button>
+
+
+            <script>
+                const addEventButton = document.getElementById("addEventButton");
+                addEventButton.addEventListener("click", addEvent);
+                function addEvent() {
+                    document.getElementById("addEventButton").innerHTML = "Clicked!";
+                }
+            </script>
+        </div>
+
+        <hr class="divHr">
+
+        <div class="mainDiv">
+            <h4>Removing Events</h4>
+            <p>In this example, when the "add" button is pressed, an event listener which adds an event listener to
+                perform "myFunction()" to the "test" button will fire. When the "remove" button is pressed, an 
+                event listener which removes the event listener that performs "myFunction()" from the "test" button
+                will fire. When the "test" button is clicked, it will perform "myFunction()" which will print 
+                "Hello World!" if the event listener has been added, and do dothing if the even listener has been 
+                removed/was never added. 
+            </p>
+
+            <button id="add">Add</button>
+            <button id="remove">Remove</button>
+            <button id="test">Test click</button>
+            <p id="testResult" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+                const add = document.getElementById("add");
+                const remove = document.getElementById("remove");
+                const test = document.getElementById("test");
+
+                function myFunction() {
+                    document.getElementById("testResult").innerHTML += "Hello World!";
+                }
+
+                //let add listen for a click
+                add.addEventListener("click", function () {
+                    test.addEventListener("click", myFunction);
+                });
+                //let remove listen for a click
+                remove.addEventListener("click", function () {
+                    test.removeEventListener("click", myFunction);
+                });
+            </script>
+
+            <p>Note: To remove an event listener, you must use the same named function you used to add it.</p>
+        </div>
+
+         <hr class="divHr">
+
+        <div class="mainDiv">
+            <h4>Blocking Events</h4>
+            <p>In this example, there is an event listener attached to the link so that when it is clicked,
+                the default action of the link is blocked using "event.preventDefault()" so that instead of 
+                opening the link, the message "That link has been blocked!" is displayed.
+            </p>
+            <a href="https://www.w3schools.com" id="link">Go to W3 Schools</a>
+            <p id="blockDemo" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+                const link = document.getElementById("link");
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    document.getElementById("blockDemo").innerHTML = "That link has been blocked!";
+                });
+            </script>
+        </div>
+    </body>
+</html>

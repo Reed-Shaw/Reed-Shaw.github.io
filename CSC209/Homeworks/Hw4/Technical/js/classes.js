@@ -96,6 +96,7 @@ class Edges {
         let thisEdge = 0;
         let edgeId = 1;
         for(let i = 0; i < this.arrPoints.length - 1; i++){
+            console.log("i:" + i);
             if(i == 0){
                 edgesArray.push(new Edge(this.arrPoints[i], this.arrPoints[i+1]));
                 edgesArray[thisEdge].drawEdge(ctx);

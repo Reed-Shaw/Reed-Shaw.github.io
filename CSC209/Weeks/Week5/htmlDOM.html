@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML DOM</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="basicTutorial.css">
+    </head>
+    <body>
+        <div class="headerDiv"><a href="./week5.html">Back to Week 5</a></div>
+        <hr>
+        <div class="mainDiv">
+            <h1>The HTML DOM (Document Object Model)</h1>
+            <p>When a web page is loaded, the browser creates a Document Object Model of the page. The HTML DOM model is 
+                constructed as a tree of Objects:</p>
+            <p>The HTML DOM Tree of Objects</p>
+            <img src="Images/img_htmldomtree.gif">
+            <hr class="divHr">
+
+            <h3>Finding/Accessing HTML Elements</h3>
+            <p>The HTML DOM can be used to access HTML elements. When you want to access HTML elements with JavaScript, you have to 
+                find the elements first. There are a couple of ways to do this:</p>
+            <ul>
+                <li>Finding HTML elements by id</li>
+                <li>Finding HTML elements by tag name</li>
+                <li>Finding HTML elements by class name</li>
+                <li>Finding HTML elements by CSS selectors</li>
+                <li>Finding HTML elements by HTML object collections</li>
+            </ul>
+            <p>The getElementById method used id="demo" to find an element. id="demo" is an <b>HTML property</b>. getElementById() is a 
+                <b>DOM Method</b>. innerHTML is a <b>DOM Property</b>.</p>
+            <hr class="divHr">
+
+            <h3>The DOM Tree</h3>
+            <p>When a web page loads, the browser creates a tree-like representation of the HTML document. Each part of the document 
+                are nodes in the tree (assume all tags have corner brackets):</p>
+            <table>
+                <th>Node</th>
+                <th>Description</th>
+                <tr>
+                    <td>Document</td>
+                    <td>Owner of all nodes in the document</td>
+                </tr>
+                <tr>
+                    <td>html</td>
+                    <td>Element Node</td>
+                </tr>
+                <tr>
+                    <td>head</td>
+                    <td>Element Node</td>
+                </tr>
+                <tr>
+                    <td>body</td>
+                    <td>Element Node</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>Element Node</td>
+                </tr>
+                <tr>
+                    <td>href</td>
+                    <td>Attribute Node</td>
+                </tr>
+                <tr>
+                    <td>h1</td>
+                    <td>Element Node</td>
+                </tr>
+                <tr>
+                    <td>My Header</td>
+                    <td>Text Node</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

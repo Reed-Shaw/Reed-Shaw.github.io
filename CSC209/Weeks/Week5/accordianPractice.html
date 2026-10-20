@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <title>Accordian Practice</title>
+    <style>
+        .accordian {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active, .accordian:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <a href="./week5.html">Back to Week 5</a>
+    <hr>
+    <h2>Animated Accordian Practice</h2>
+    <p>Click on the buttons to open the collapsible content.</p>
+
+    <button class="accordian">Section 1</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur blah blah blah.</p>
+    </div>
+
+    <button class="accordian">Section 2</button>
+    <div class="panel">
+        <p>More lorem ipsum blah blah blah</p>
+    </div>
+
+    <button class="accordian">Section 3</button>
+    <div class="panel">
+        <p>More lorem ipsum blah blah blah</p>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordian");
+        var i;
+
+        for(i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
+</body>

@@ -1,0 +1,98 @@
+body {
+  font-family:Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header */
+header {
+    padding: 10px;
+    margin-bottom: 0px;
+    text-align: left;
+    background: #3b0158;
+    color: white;
+}
+
+/* Left side navigation bar */
+ul.leftsidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position:sticky;
+  height:auto;
+  top: 0;
+  overflow: auto;
+  border: 1px solid #555555;
+}
+ul.leftsidenav li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #555555;
+}
+
+ul.leftsidenav li a.active {
+    background-color: #f1f1f1;
+    color: #000;
+}
+
+ul.leftsidenav li a:hover:not(.active) {
+    background-color: #d6b4e7;
+    color: black;
+}
+
+/*In case of screen resizing*/
+@media screen and (max-width: 900px) {
+    ul.leftsidenav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+        
+    ul.leftsidenav li a {
+        float: left;
+        padding: 15px;
+    }
+            
+    div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+    ul.leftsidenav li a {
+        text-align: center;
+        float: none;
+    }
+}
+
+/*Basic Div */
+div.content {
+    padding: 0px;
+    h1{
+        text-align:left;
+    }
+}
+/*Div for things inside '.content' so text isn't hitting the absolute sides of the div.content*/
+div.inside {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 0px;
+    height: auto;
+    p {
+        text-align:center;
+    }
+    h1{
+        text-align:center;
+    }
+}
+
+/*Basic Div */
+div.rightSide {
+    margin-left: 25%;
+    padding: 20px;
+    height: 1000px;
+    h1{
+        text-align:center;
+    }
+}

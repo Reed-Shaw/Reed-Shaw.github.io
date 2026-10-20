@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <title>Accordian Practice With Side Nav</title>
+    <style>
+        /* Left side navigation bar */
+        ul.leftsidenav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 25%;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+        border: 1px solid #555555;
+        }
+
+        ul.leftsidenav li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-bottom: 1px solid #555555;
+        }
+
+        ul.leftsidenav li a.active {
+            background-color: #3b0158;
+            color: white;
+        }
+
+        ul.leftsidenav li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+                .accordian {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active, .accordian:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <a href="./week5.html">Back to Week 5</a>
+    <hr>
+    <h2>Accordian Practice With Side Nav</h2>
+    <p>Click on the buttons to open the collapsible content.</p>
+    <ul class="leftsidenav">
+        <li>
+            <button class="accordian">Section 1</button>
+            <div class="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur blah blah blah.</p>
+            </div>
+        </li>
+        <li>
+            <button class="accordian">Section 2</button>
+            <div class="panel">
+                <p>More lorem ipsum blah blah blah</p>
+            </div>
+        </li>
+        <li>
+            <button class="accordian">Section 3</button>
+            <div class="panel">
+                <p>More lorem ipsum blah blah blah</p>
+            </div>
+        </li>
+    </ul>
+
+    <script>
+        var acc = document.getElementsByClassName("accordian");
+        var i;
+
+        for(i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
+</body>

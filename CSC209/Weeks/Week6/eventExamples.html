@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Examples Lab</title>
+        <link rel="stylesheet" href="./Css/basicTutorial.css">
+    </head>
+
+    <body onload="checkCookies()">
+        <div class="headerDiv">
+            <a href="./week6.html">Back to Week 6</a>
+        </div>
+
+        <hr class="divHr">
+
+        <div class="mainDiv">
+            <h3>Event Examples Lab</h3>
+            <h4>Reacting to Events</h4>
+            <p>A JavaScript can be executed when an event occurs, like when a user clicks on an HTML element.
+                To execute code when a user clicks on an element, add JavaScript code to an HTML event attribute:
+            </p>
+            <p>onclick=<i>JavaScript</i></p>
+            <p>Examples of JS events:</p>
+            <ul>
+                <li>When a user clicks the mouse</li>
+                <li>When a web page has loaded</li>
+                <li>When an image has been loaded</li>
+                <li>When the mouse moves over an element</li>
+                <li>When an input field is changed</li>
+                <li>When an HTML form is submitted</li>
+                <li>When a user strokes a key</li>
+            </ul>
+
+            <hr class="divHr">
+            <p>In this example, the content of the &lth1> element is changed when a user clicks on it:</p>
+            <p onclick="this.innerHTML='Text is clicked!'" style="color: rgb(0, 94, 30);">Click on this text!</p>
+
+            <hr class="divHr">
+            <p>In this example, a function is called from the event handler:</p>
+            <p onclick="changeText(this)" style="color: rgb(0, 94, 30);">Click on this text!</p>
+
+            <script>
+                function changeText(id) {
+                    id.innerHTML = "Text is clicked!";
+                }
+            </script>
+        </div>
+
+        <hr class="divHr">
+
+        <div class="mainDiv">
+            <h3>HTML Event Attributes</h3>
+            <p>To assign events to HTML elements you can use event attributes.</p>
+            <p>In this example, a function named displayDate will be executed when the button is clicked:</p>
+            <p>Click the button to display the date.</p>
+            <p id="eventAttDemo" style="color: rgb(0, 94, 30);"></p>
+            <button onclick="displayDate()">The time is?</button>
+
+            <script>
+                function displayDate() {
+                    document.getElementById("eventAttDemo").innerHTML = Date();
+                }
+            </script>
+        </div>
+
+        <hr class="divHr">
+
+        <div class="mainDiv">
+            <h4>Assign Events Using the HTML DOM</h4>
+            <p>The HTML DOM allows you to assign events to HTML elements using JavaScript.</p>
+            <p>In this example, a function named displayDate is assigned to an HTML element with the id="myBtn". 
+                The function will be executed when the button is clicked:
+            </p>
+            <p>Click the button the execute the displayDate function.</p>
+            <button id="dateButton">Try it!</button>
+            <p id="dateDemo" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+                document.getElementById("dateButton").onclick = displayDate;
+
+                function displayDate() {
+                    document.getElementById("dateDemo").innerHTML = Date();
+                }
+            </script>
+        </div>
+
+        <hr class="divHr">
+
+        <div class="mainDiv">
+            <h4>The onload and onunload Events</h4>
+            <p>The onload and onunload events are triggered when the user enters or leaves the page. The onload 
+                event can be used to check the visitor's browser type and browser version, and load the proper 
+                version of the web page based on the information. The onload and onunload events can be used to 
+                deal with cookies.
+            </p>
+            <p>In this example, the body tag inlcudes "onload='checkCookies()'" that run the function 
+                checkCookies() when the page loads. If cookies are enabled, "Cookies are enabled." is displayed. 
+                If cookies are disabled, "Cookies are not enabled." is displayed. 
+            </p>
+            <p id="cookiesDemo" style="color: rgb(0, 94, 30);"></p>
+
+            <script>
+                function checkCookies() {
+                    let text = "";
+                    if(navigator.cookieEnabled ==true) {
+                        text = "Cookies are enabled.";
+                    } else {
+                        text = "Cookies are not enabled.";
+                    }
+                    document.getElementById("cookiesDemo").innerHTML = text;
+                }
+            </script>
+        </div>
+
+        <hr class="divHr">
+
+        <div class="mainDiv">
+            <h4>The oninput Event</h4>
+            <p>The oninput event often does some action while the user inputs data.</p>
+            <p>This example uses oninput to change the the content of an input field so that as the user is writing,
+                what they input is automatically changed to uppercase:</p>
+            <p>Enter your name: <input type="text" id="userName" oninput="upperCase()"></p>
+
+            <script>
+                function upperCase() {
+                    const name = document.getElementById("userName");
+                    name.value = name.value.toUpperCase();
+                }
+            </script>
+        </div>
+
+        <hr class="divHr">
+
+        <div class="mainDiv">
+            <h4>The onchange Event</h4>
+            <p>The onchange event is often used in combination with validation of input fields.</p>
+            <p>In this example, when you leave the input field, 'onchange="makeUpperCase()"' is fired, which
+                changes all the letters input to uppercase:
+            </p>
+            <p>Enter your name: <input type="text" id="fname" onchange="makeUpperCase()"></p>
+
+            <script>
+                function makeUpperCase() {
+                    const name = document.getElementById("fname");
+                    name.value = name.value.toUpperCase();
+                }
+            </script>
+        </div>
+
+        <hr class="divHr">
+
+        <div class="mainDiv">
+            <h4>The onmouseover and onmouseout Events</h4>
+            <p>The onmouseover and onmouseout events can be used to trigger a function when the user mouses over, 
+                or out of, an HTML element.
+            </p>
+            <p>In this example, 'onmouseover="mOver(this)" onmouseout="mOut(this)"' are in the div tag so that
+                when either of those events happen, they call their respective functions. When mOver(this) is 
+                called, the text in the div changes to "Thank you!", when mOut(this) is called, the text in the 
+                div changes to "Mouse Over Me".
+            </p>
+            <div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+            style="background-color:#59a9da;width:120px;height:20px;padding:40px;">Mouse Over Me</div>
+
+            <script>
+                function mOver(obj) {
+                    obj.innerHTML = "Thank you!";
+                }
+
+                function mOut(obj) {
+                    obj.innerHTML = "Mouse Over Me";
+                }
+            </script>
+        </div>
+
+        <hr class="divHr">
+
+        <div class="mainDiv">
+            <h4>The onmousedown, onmouseup, and onlcick Events</h4>
+            <p>The onmousedown, onmouseup, and onclick events are all parts of a mouse-click. First when a 
+                mouse-button is clicked, the onmousedown event is triggered, then, when the mouse-button is 
+                released, the onmouseup event is triggered, finally, when the mouse-click is completed, the 
+                onclick event is triggered.
+            </p>
+            <p>In this example, 'onmousedown="mDown(this)" onmouseupt="mUp(this)"' are in the div tag so that
+                when either of those events happen, they call their respective functions. When mDown(this) is 
+                called, the background color changes and the text changes to "Release Me", when mUp(this) is 
+                called, the text in the color changes back and the text changes to "Thank You".
+            </p>
+
+            <div onmousedown="mDown(this)" onmouseup="mUp(this)"
+            style="background-color:#59a9da;width:90px;height:20px;padding:40px;">
+            Click Me</div>
+
+            <script>
+                function mDown(obj) {
+                    obj.style.backgroundColor = "#3f3661";
+                    obj.innerHTML = "Release Me";
+                }
+
+                function mUp(obj) {
+                    obj.style.backgroundColor="#59a9da";
+                    obj.innerHTML="Thank You";
+                }
+            </script>
+        </div>
+    </body>
+</html>

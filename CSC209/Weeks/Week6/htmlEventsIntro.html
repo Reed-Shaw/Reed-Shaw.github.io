@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <title>HTML Events Overview Lab</title>
+    <link rel="stylesheet" href="./Css/basicTutorial.css">
+</head>
+<body>
+    <div class="headerDiv">
+        <a href="./week6.html">Back to Week 6</a>
+    </div>
+    <hr>
+    <div class="mainDiv">
+        <h3>HTML Events</h3>
+        <hr>
+        <h4>The On-Click Attribute</h4>
+        <p>In this example, the code changes the content of its own element using "this.innerHTML":</p>
+        <button onclick="this.innerHTML=Date()">The time is?</button>
+        <hr>
+        <h4>Calling a JavaScript Function</h4>
+        <p>But it's more common to use the event attribute to call a JavaScript function:</p>
+        <button id="jsFunctionButton"onclick="displayDate()">The time is?</button>
+
+        <script>
+            function displayDate() {
+                document.getElementById("jsFunctionButton").innerHTML = Date();
+            }
+        </script>
+    </div>
+    <hr class="divHr">
+    <div class="mainDiv">
+        <h3>JavaScript Event Handlers</h3>
+        <p>An event handler is JavaScript code that runs when an event happens.</p>
+        <p>They can be used to handle and verify user input, user actions, and browser actions.</p>
+        <p>Ex. things that should be done every time a page loads, things that should be done when a page is closed,
+            action that should be performed when a user clicks a button, content that should be verified when a 
+            user inputs data, etc.</p>
+    </div>   
+    <hr class="divHr">
+    <div class="mainDiv">
+        <h3>Using an Event Listener</h3>
+        <p>Using "addEventListener()" is recommended over just using "onClick"</p>
+        <p>Below, "addEventListener()" is used:</p>
+        <button id="buttonEventListener">Click me for the date</button>
+        <p id="listenerDemo"></p>
+
+        <script>
+            const listener = document.getElementById("buttonEventListener");
+
+            listener.addEventListener("click", function() {
+                document.getElementById("listenerDemo").innerHTML = Date();
+            })
+        </script>
+    </div>
+</body>

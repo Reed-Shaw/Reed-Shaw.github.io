@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mouse Events Lab</title>
+        <link rel="stylesheet" href="./Css/basicTutorial.css">
+    </head>
+
+    <body>
+        <div class="headerDiv">
+            <a href="./week6.html">Back to Week 6</a>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h3>Mouse Events Lab</h3>
+            <p>Mouse events happen when the user interacts with the mouse.</p>
+            <p>JavaScript can recognize the mouse events click, dblclick, mouseover, mouseout, mousemove, mousedown, 
+                and mouseup.</p>
+        </div>
+
+        <div class="mainDiv">
+            <h4>Mouseover and Mouseout</h4>
+            <div id="myBox" style="width:200px;height:200px;padding:50px;border:3px solid #000; background-color: white;">
+                Move your mouse over this box.
+            </div>
+
+            <script>
+                const box = document.getElementById("myBox");
+
+                box.addEventListener("mouseover", function() {
+                    box.innerHTML = "Mouse is over the box!";
+                    box.style.backgroundColor = "lightblue";
+                });
+
+                box.addEventListener("mouseout", function() {
+                    box.innerHTML = "Move your mouse over this box.";
+                    box.style.backgroundColor = "white";
+                })
+            </script>
+        </div>
+
+        <div class="mainDiv">
+            <h4>Mouse Position</h4>
+            <p>The MouseEvent interface provides an event object which contains useful properties like pointer 
+                coordinates, which mouse button are pressed, and more.
+            </p>
+            <p>Example using event.clientX and event.clientY:</p>
+            <div id="mousePositionBox" style="width:200px;height:200px;padding:50px;border:3px solid #000; background-color: white;">
+                Move your mouse over this box.
+            </div>
+
+            <script>
+                const mouseBox = document.getElementById("mousePositionBox");
+                document.addEventListener("mousemove", function (event) {
+                    //Mouse coordinates will only be shown when the mouse is in the box
+                    if(event.target === mouseBox) {
+                        mouseBox.innerHTML = "X: " + event.clientX + ", Y: " + event.clientY;
+                    }
+                });
+            </script>
+        </div>
+    </body>
+</html>
