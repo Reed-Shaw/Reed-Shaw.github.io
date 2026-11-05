@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Mini App 1</title>
+        <link rel="stylesheet" href="./Css/basicTutorial.css">
+    </head>
+
+    <body>
+        <div class="headerDiv">
+            <a href="./main.html">Back to Mini Apps</a>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h2>Answer all quuestions before reavealing the surprise:</h2>
+            <p>Enter your name: <input type="text" id="userName"></p>
+            <p id="showImage">Click here for a surprise picture!</p>
+            <p id="imageHere"></p>
+
+            <script>
+                const userName = document.getElementById("userName");
+                const showImage = document.getElementById("showImage");
+
+                showImage.addEventListener("click", dontAllowImage());
+
+                userName.addEventListener("change", function () {
+                    showImage.removeEventListener("click", dontAllowImage());
+                    showImage.addEventListener("click", allowImage());
+                });
+
+                function allowImage() {
+                    document.getElementById("imageHere").innerHTML = "<img src='./Images/smithCollegeLogo.jpg'>";
+                }
+
+                function dontAllowImage() {
+                    document.getElementById("imageHere").innerHTML = "Before you see the surprise picture, you must enter your name!";
+                }
+
+            </script>
+        </div>
+    </body>
+</html>

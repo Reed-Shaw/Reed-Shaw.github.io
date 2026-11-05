@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Mini App 1</title>
+        <link rel="stylesheet" href="./Css/basicTutorial.css">
+    </head>
+
+    <body>
+        <div class="headerDiv">
+            <a href="./main.html">Back to Mini Apps</a>
+        </div>
+        <hr>
+        <div id="changeDiv" class="mainDiv">
+            <h2>Interact with the button to see many events applied to the same button.</h2>
+            <button id="myButton">Try Me!</button>
+
+            <script>
+                var myButton = document.getElementById("myButton");
+                
+                myButton.addEventListener("mouseover", mouseoverFunction);
+                myButton.addEventListener("click", clickFunction);
+                myButton.addEventListener("mouseout", mouseoutFunction);
+
+                function mouseoverFunction() {
+                    document.getElementById("myButton").innerHTML = "You're Mousing Over!";
+                    document.getElementById("changeDiv").style.backgroundColor = "rgb(45, 148, 93)";
+                }
+
+                function clickFunction() {
+                    document.getElementById("myButton").innerHTML = "You clicked me!";
+                }
+
+                function mouseoutFunction() {
+                    document.getElementById("myButton").innerHTML = "You Moused Out!";
+                    document.getElementById("changeDiv").style.backgroundColor = "rgb(225, 215, 234)";
+                }
+            </script>
+        </div>
+    </body>
+</html>

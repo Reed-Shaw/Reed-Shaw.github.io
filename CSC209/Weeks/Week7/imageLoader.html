@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Image Loader</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <h2>Image Loader Level 1</h2>
+        <p id="images">
+
+        </p>
+
+        <script>
+            const myImages= ["birdsOnRiverBank.jpeg", "rainbowOverMarsh.jpeg", "rainbowOverMarshShadows.jpeg", "scarbMarshAboveView.jpg", "scarbMarshKayak.jpg"];
+            const TEMPLATE = "<img src=./Images/SOURCE>";
+            for(let i = 0; i<myImages.length; i++) {
+                document.getElementById("images").innerHTML += TEMPLATE.replace("SOURCE", myImages[i]);
+            }
+        </script>
+    </body>
+</html>
