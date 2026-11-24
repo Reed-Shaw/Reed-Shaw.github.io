@@ -1,0 +1,45 @@
+{
+    "0": {
+        "username": "z",
+        "password": "pz",
+        "loggedtimes": 7
+    },
+    "1": {
+        "username": "a",
+        "password": "pa",
+        "loggedtimes": 15
+    },
+    "2": {
+        "username": "b",
+        "password": "pb",
+        "loggedtimes": 0
+    },
+    "3": {
+        "username": "alice",
+        "password": "password",
+        "loggedtimes": 5
+    },
+    "4": {
+        "username": "carol",
+        "password": "letmein",
+        "loggedtimes": 3
+    },
+    "5": {
+        "username": "bob",
+        "password": "123",
+        "loggedtimes": 12
+    },
+    "6": {
+        "username": "dave",
+        "password": "hackme",
+        "loggedtimes": 8
+    },
+    "7": {
+        "username": "erin",
+        "password": "0101",
+        "loggedtimes": 1
+    },
+    "-1": {
+        "loggedtimes": 1
+    }
+}

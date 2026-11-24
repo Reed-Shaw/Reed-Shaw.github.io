@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON PHP Tutorial</title>
+        <link rel="stylesheet" href="./CSS/tutorials.css">
+    </head>
+    <body>
+        <div class="headerDiv"><a href="./tutorials.html">Back to Tutorials</a></div>
+        <hr>
+        <div class="mainDiv">
+            <h1>JSON PHP Tutorial</h1>
+        </div>
+        <hr>
+
+        <div class="mainDiv">
+            <h3>JavaScript Loading JSON</h3>
+            <p>JavaScript can load JSON and convert it into JavaScript values. The modern way to load JSON is with the fetch() method.</p>
+        </div>
+        <hr>
+
+        <div class="mainDiv">
+            <h3>Loading JSON</h3>
+            <p>Use the fetch() method to request the JSON file. The response.json() method parses 
+                the JSON text and returns a JavaScript value.</p>
+            <p>
+                <code>
+                    async function loadJSON() {
+                        const response = await fetch("customer.json");
+                        const customer = await response.json();
+                        
+                        myDisplayer(customer.name);
+                    }
+                    loadJSON();
+                </code>
+            </p>
+            <p>Note: If the file contains a JSON array, response.json() returns a JavaScript array.</p>
+        </div>
+        <hr>
+
+    </body>
+</html>

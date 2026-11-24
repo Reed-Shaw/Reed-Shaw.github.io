@@ -1,0 +1,28 @@
+Users Text File
+
+Username: andrew Password: 123Andrew 
+
+Username: andrew Password: Andrew123 
+
+Username: Sally Password: SallyPassword 
+
+Username: Anne Password: 12345 
+
+Username: New User Password: Password 123 
+
+Username: admin Password: adminpassword 
+
+Username: Emma Grace Password: mypassword 
+
+
+Username: admin Password: myadmin 
+
+Username: Iowa Password: iowastate 
+
+Username: Harry Password: Bingo 
+
+Username: Ashley Password: AshleyPass 
+
+Username: alice Password: Alice123 
+
+Username: Abbey Password: Abbey! 

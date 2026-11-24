@@ -2,17 +2,17 @@
 <html>
     <head>
         <title>Tuesday Lab Admin Page</title>
-        <link rel="stylesheet" href="./CSS/basicCss.css">
+        <link rel="stylesheet" href="../CSS/basicCss.css">
     </head>
     <body>
         <div class="headerDiv">
-            <a href="./week9.html">Back to Week 9</a>
+            <a href="../.././technical.html">Back to Technical</a>
         </div>
         <hr>
         <div class="mainDiv">
-            <h1>Tuesday In-Class Lab 15 Pt 2</h1>
+            <h1>Admin Page</h1>
             <?php
-                $myJson = file_get_contents("./users.json");
+                $myJson = file_get_contents("../users.json");
                 $usernameArray = json_decode($myJson, true);
             ?>
 

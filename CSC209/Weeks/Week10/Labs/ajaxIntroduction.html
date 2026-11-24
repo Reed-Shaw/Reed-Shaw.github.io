@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AJAX Introduction Tutorial</title>
+        <link rel="stylesheet" href="./CSS/tutorials.css">
+    </head>
+    <body>
+        <div class="headerDiv"><a href="./lab17.html">Back to Lab 17</a></div>
+        <hr>
+        <div class="mainDiv">
+            <h1>AJAX Introduction Tutorial</h1>
+        </div>
+        <hr>
+
+        <div class="mainDiv">
+            <h3>What is AJAX?</h3>
+            <p>AJAX stands for Asynchronous JavaScript and XML. It is not a programming
+                language. AJAX just uses a combination of: A browser built-in 
+                XMLHttpRequest object (to request data from a web server) and 
+                JavaScript and HTML DOM (to display or use the data). <br>
+                AJAX allows web pages to be updated asynchronously by exchanging data 
+                with a web server behind the scenes. This means that it is possible to 
+                update parts of a web page, without reloading the whole page.
+            </p>
+            <h4>Example:</h4>
+            <div id="demo">
+            <h3>The XMLHttpRequest Object</h3>
+            <button type="button" onclick="loadDoc()">Change Content</button>
+            </div>
+
+            <script>
+                function loadDoc() {
+                    const xhttp = new XMLHttpRequest();
+                    xhttp.onload = function() {
+                        document.getElementById("demo").innerHTML =
+                        this.responseText;
+                    }
+                    xhttp.open("GET", "ajax_info.txt");
+                    xhttp.send();
+                }
+            </script>
+        </div>
+    </body>
+</html>

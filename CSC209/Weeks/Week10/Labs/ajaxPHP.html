@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AJAX PHP Example Tutorial</title>
+        <link rel="stylesheet" href="./CSS/tutorials.css">
+    </head>
+    <body>
+        <div class="headerDiv"><a href="./lab17.html">Back to Lab 17</a></div>
+        <hr>
+        <div class="mainDiv">
+            <h1>AJAX PHP Example Tutorial</h1>
+        </div>
+        <hr>
+
+        <div class="mainDiv">
+            <h3>AJAX PHP Example</h3>
+            <p>The following example demonstrates how a web page can communicate 
+                with a web server while a user types characters in an input field:
+            </p>
+            <h4>Example:</h4>
+            <h4>Start typing a name in the input field below:</h4>
+            <p>Suggestions: <span id="txtHint"></span></p> 
+            <p>First name: <input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
+            <script>
+                function showHint(str) {
+                    if (str.length == 0) { 
+                        document.getElementById("txtHint").innerHTML = "";
+                        return;
+                    }
+                    const xhttp = new XMLHttpRequest();
+                    xhttp.onload = function() {
+                        document.getElementById("txtHint").innerHTML =
+                        this.responseText;
+                    }
+                    xhttp.open("GET", "./PHP/gethint.php?q="+str);
+                    xhttp.send();   
+                }
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>XMLHttpRequest Object Tutorial</title>
+        <link rel="stylesheet" href="./CSS/tutorials.css">
+    </head>
+    <body>
+        <div class="headerDiv"><a href="./lab17.html">Back to Lab 17</a></div>
+        <hr>
+        <div class="mainDiv">
+            <h1>XMLHttpRequest Object Tutorial</h1>
+        </div>
+        <hr>
+
+        <div class="mainDiv">
+            <h3>The XMLHttpRequest Object</h3>
+            <p>The XMLHttpRequest object can be used to exchange data with a web 
+                server behind the scenes. This means that it is possible to update 
+                parts of a web page without reloading the whole page.
+            </p>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h4>Create an XMLHttpRequest Object</h4>
+            <p>Syntax:</p>
+            <p><code>variable = new XMLHttpRequest();</code></p>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h4>Define a Callback Function</h4>
+            <p>A callback function is a function passed as a parameter to another 
+                function. In this case, the callback function should contain the code 
+                to execute when the response is ready.
+            </p>
+            <p>
+                <code>
+                    xhttp.onload = function() {<br>
+                        // What to do when the response is ready<br>
+                    }<br>
+                </code>
+            </p>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h4>Send a Request</h4>
+            <p>To send a request to a server, you can use the open() and send() 
+                methods of the XMLHttpRequest object:
+            </p>
+            <p>
+                <code>
+                    xhttp.open("GET", "ajax_info.txt", true);<br>
+                    xhttp.send();<br>
+                </code>
+            </p>
+            <hr>
+            <h4>Example:</h4>
+            <div id="demo">
+                <p>Let AJAX change this text.</p>
+                <button type="button" onclick="loadDoc()">Change Content</button>
+            </div>
+
+            <script>
+                function loadDoc() {
+                    const xhttp = new XMLHttpRequest();
+                    xhttp.onload = function() {
+                        document.getElementById("demo").innerHTML = this.responseText;
+                    }
+                    xhttp.open("GET", "ajax_info.txt");
+                    xhttp.send();
+                }
+            </script>
+            <p>NOTE: For security reasons, modern browsers do not allow access 
+                across domains. This means that both the web page and the XML file 
+                it tries to load, must be located on the same server.
+            </p>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h4>The onload Property</h4>
+            <p>With the XMLHttpRequest object you can define a callback function to 
+                be executed when the request receives an answer. The function is 
+                defined in the onload property of the XMLHttpRequest object:
+            </p>
+            <p>
+                <code>
+                    xhttp.onload = function() {<br>
+                        document.getElementById("demo").innerHTML = this.responseText;<br>
+                    }<br>
+                    xhttp.open("GET", "ajax_info.txt");<br>
+                    xhttp.send();<br>
+                </code>
+            </p>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h4>Multiple Callback Functions</h4>
+            <p>If you have more than one AJAX task in a website, you should create one 
+                function for executing the XMLHttpRequest object, and one callback 
+                function for each AJAX task. The function call should contain the 
+                URL and what function to call when the response is ready.
+            </p>
+            <p>Example:</p>
+            <p>
+                <code>
+                    loadDoc("url-1", myFunction1);<br>
+                    loadDoc("url-2", myFunction2);<br>
+                    function loadDoc(url, cFunction) {<br>
+                        const xhttp = new XMLHttpRequest();<br>
+                        xhttp.onload = function() {cFunction(this);}<br>
+                        xhttp.open("GET", url);<br>
+                        xhttp.send();<br>
+                    }<br>
+                    function myFunction1(xhttp) {<br>
+                        // action goes here<br>
+                    }<br>
+                    function myFunction2(xhttp) {<br>
+                        // action goes here<br>
+                    }
+                </code>
+            </p>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h4>The onreadystatechange Property</h4>
+            <p>The readyState property holds the status of the XMLHttpRequest. The 
+                onreadystatechange property defines a callback function to be 
+                executed when the readyState changes. The status property and the 
+                statusText properties hold the status of the XMLHttpRequest object.
+            </p>
+            <table>
+                <th>Property</th>
+                <th>Description</th>
+                <tr>
+                    <td>onreadystatechange</td>
+                    <td>Defines a function to be called when the readyState property changes</td>
+                </tr>
+                <tr>
+                    <td>readyState</td>
+                    <td>Holds the status of the XMLHttpRequest.<br>
+                    0: request not initialized<br>
+                    1: server connection established<br>
+                    2: request received<br>
+                    3: processing request<br>
+                    4: request finished and response is ready</td>
+                </tr>
+                <tr>
+                    <td>status</td>
+                    <td>200: "OK"<br>
+                        403: "Forbidden"<br>
+                        404: "Page not found"<br>
+                        (and more)
+                    </td>
+                </tr>
+                <tr>
+                    <td>statusText</td>
+                    <td>Returns the status-text (e.g. "OK" or "Not Found")</td>
+                </tr>
+            </table>
+            <p>Note: The onreadystatechange function is called every time the 
+                readyState changes.
+            </p>
+            
+        </div>
+    </body>
+</html>

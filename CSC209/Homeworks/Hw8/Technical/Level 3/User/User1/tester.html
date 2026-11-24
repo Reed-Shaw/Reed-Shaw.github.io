@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome Page User 1</title>
+        <link rel="stylesheet" href="../../CSS/basicCss.css">
+        <script src="../../timeLoggedIn.js"></script>
+    </head>
+    <body>
+        <p id="testStartTime"></p>
+        <p id="testTotalTime"></p>
+        <button id="logoutBtn">Logout</button>
+        <script>
+            let startTime;
+            let endTime;
+            document.getElementById("logoutBtn").addEventListener("click", function() {
+                endTime = new Date().getTime();
+                document.getElementById("testStartTime").innerHTML = endTime;
+            });
+            window.addEventListener("load", function() {
+                startTime = new Date().getTime();
+                document.getElementById("testStartTime").innerHTML = startTime;
+            });
+            let totalTime = timeLoggedIn(startTime, endTime);
+            document.getElementById("testTotalTime").innerHTML = totalTime;
+        </script>
+    </body>
+</html>

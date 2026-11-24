@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="headerDiv">
-            <a href="./week9.html">Back to Week 9</a>
+            <a href="../week9.html">Back to Week 9</a>
         </div>
         <hr>
         <div class="mainDiv">

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON Syntax Tutorial</title>
+        <link rel="stylesheet" href="./CSS/tutorials.css">
+    </head>
+    <body>
+        <div class="headerDiv"><a href="./tutorials.html">Back to Tutorials</a></div>
+        <hr>
+        <div class="mainDiv">
+            <h1>JSON Syntax Tutorial</h1>
+            <p>JSON has a very simple syntax for representing structured data. One JSON document consists of one JSON value.</p>
+            <p>The value can be:</p>
+            <ul>
+                <li>An Object</li>
+                <li>An Array</li>
+                <li>A String</li>
+                <li>A Number</li>
+                <li>A Boolean</li>
+                <li>or null</li>
+            </ul>
+        </div>
+        <hr>
+
+        <div class="mainDiv">
+            <h3>JSON Object Literals</h3>
+            <p>This is a JSON string:</p>
+            <p>'{"name":"John", "age":30, "car":null}'</p>
+            <p>Inside the JSON string there is a JSON object literal:</p>
+            <p>{"name":"John", "age":30, "car":null}</p>
+            <p>A JSON object is written between curly braces { }. An object contains zero or more properties. Properties come in 
+                key/value pairs separated by commas. key names are strings enclosed in double quotes. Keys and values are separated 
+                by a colon.
+            </p>
+            <p>Values must be a valid JSON data type. JSON supports the above listed data types.</p>
+        </div>
+        <hr>
+
+        <div class="mainDiv">
+            <h3>JSON Array Literals</h3>
+            <p>This is a JSON string:</p>
+            <p>'["Ford", "BMW", "Fiat"]'</p>
+            <p>Inside the JSON string there is a JSON array literal:</p>
+            <p>["Ford", "BMW", "Fiat"]</p>
+            <p>A JSON array is written between square brackets [ ]. An array contains zero or more values. Values are 
+                separated by commas. Values can be any of the six JSON data types.
+            </p>
+        </div>
+        <hr>
+
+        <div class="mainDiv">
+            <h3>JSON Property Names</h3>
+            <p>Every property name must be a string. Property names must be enclosed in double quotes.</p>
+            <p>Valid:</p>
+            <p>'{"name":"John"}'</p>
+            <p>Invalid:</p>
+            <p>'{name:"John"}'</p>
+        </div>
+        <hr>
+
+        <div class="mainDiv">
+            <h3>JSON Strings</h3>
+            <p>JSON strings must use double quotes.</p>
+            <p>Valid:</p>
+            <p>'{"name":"John"}'</p>
+            <p>Invalid:</p>
+            <p>'{"name":'John'}'</p>
+        </div>
+        <hr>
+
+    </body>
+</html>

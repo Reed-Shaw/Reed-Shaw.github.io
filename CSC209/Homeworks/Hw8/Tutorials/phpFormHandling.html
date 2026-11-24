@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PHP Form Handling Tutorial</title>
+        <link rel="stylesheet" href="./CSS/tutorials.css">
+    </head>
+    <body>
+        <div class="headerDiv"><a href="./tutorials.html">Back to Tutorials</a></div>
+        <hr>
+        <div class="mainDiv">
+            <h1>PHP Form Handling Tutorial</h1>
+        </div>
+        <hr>
+
+        <div class="mainDiv">
+            <h3>PHP - A Simple HTML Form</h3>
+            <p>The PHP superglobals $_GET and $_POST are used to collect form-data. The example 
+                below displays a simple HTML form with two input fields and a submit button:
+            </p>
+            <p>
+                <code>
+                    &lt;form action="somefile" method="post"&gt;<br>
+                        Name: &lt;input type="text" name="name"&gt;&lt;br&gt;<br>
+                        E-mail: &lt;input type="text" name="email"&gt;&lt;br&gt;<br>
+                        &lt;input type="submit"&gt;<br>
+                    &lt;/form&gt;<br>
+                </code>
+            </p>
+            <p>When a user fills out the form above and clicks the submit button, the form data 
+                is sent for processing to a PHP file named "welcome.php". The form data is sent 
+                with the HTTP POST method. To display the submitted data you could simply echo 
+                all the variables.
+            </p>
+            <p>Note: the same result can be achieved by using the GET method, however $_GET is 
+                an array of variables passed to the current script via the URL query parameters,
+                while $_POST is an array of variables passed to the current script via the 
+                HTTP POST method. This means anything sent with GET will be visible in the URL.
+            </p>
+        </div>
+        <hr>
+    </body>
+</html>

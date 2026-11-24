@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PHP Sessions Tutorial</title>
+        <link rel="stylesheet" href="./CSS/tutorials.css">
+    </head>
+    <body>
+        <div class="headerDiv"><a href="./lab17.html">Back to Lab 17</a></div>
+        <hr>
+        <div class="mainDiv">
+            <h1>PHP Sessions Tutorial</h1>
+        </div>
+        <hr>
+
+        <div class="mainDiv">
+            <h2>What is a PHP Session?</h2>
+            <p>Session variables hold information about one single user, and are available through 
+                all pages in one application. <br>
+                When you work with an application, you open it, do some changes, and then you 
+                close it. This is much like a Session. The computer knows who you are. It knows 
+                when you start the application and when you close it. But on the internet there 
+                is one problem: the web server does not know who you are or what you do, because 
+                the HTTP address doesn't maintain state.<br>
+                Session variables solve this problem by storing user information to be used across 
+                multiple pages (e.g. user logins, shopping carts, etc).<br>
+                By default, session variables last until the user closes the browser.
+            </p>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h3>PHP Session Functions</h3>
+            <ul>
+                <li>session_start() - Starts a new session</li>
+                <li>$_SESSION - Stores and access session variables</li>
+                <li>unset() - Removes a specific session variable (e.g unset($_SESSION["favcolor"]))</li>
+                <li>session_destroy() - Destroys all data associated with the current session</li>
+                <li>session_unset() - Frees all session variables</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h3>Start a PHP Session</h3>
+            <p>A session is started with the session_start() function.</p>
+            <p>NOTE: The session_start() function must be called at the beginning of 
+                every PHP script, before any HTML output or whitespace.
+            </p>
+            <p>The PHP superglobal variable $_SESSION is used to both store and 
+                access the session variables available to the current script.
+            </p>
+            <p>We'll create a PHP page called "test.php". We'll start a new PHP session 
+                and set session variables like this:
+            </p>
+            <p>
+                <code>
+                    &lt?php<br>
+                        // Start the session<br>
+                        session_start();<br>
+                    ?>
+                    <br>&lt!DOCTYPE html><br>
+                    &lthtml><br>
+                        &ltbody><br>
+                            &lt?php<br>
+                                // Set session variables<br>
+                                $_SESSION["favcolor"] = "green";<br>
+                                $_SESSION["favanimal"] = "cat";<br>
+                                echo "Session variables are set.";<br>
+                            ?><br>
+                        &lt/body><br>
+                    &lt/html>
+                </code>
+            </p>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h3>Retrieve PHP Session Variable Values</h3>
+            <p>Next, we'll create another PHP page called "test2.php". From this page, 
+                we can access the session information we set on the first page 
+                ("test.php"). "test2.php" will look like this:
+            </p>
+            <p>
+                <code>
+                    &lt?php<br>
+                    // Resume the session<br>
+                    session_start();<br>
+                    ?><br>
+
+                    &lt!DOCTYPE html><br>
+                    &lthtml><br>
+                    &ltbody><br>
+
+                    &lt?php<br>
+                    // Output session variables that were set on previous page<br>
+                    if(isset($_SESSION["favcolor"])) {<br>
+                    echo "Favorite color is " . $_SESSION["favcolor"] . ".<br>";<br>
+                    echo "Favorite animal is " . $_SESSION["favanimal"] . ".";<br>
+                    } else {<br>
+                    echo "No session data found.";<br>
+                    }<br>
+                    ?><br>
+
+                    &lt/body><br>
+                    &lt/html><br>
+                </code>
+            </p>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h4>How does it work? How does it know it's me?</h4>
+            <p>When a user visits a page that calls the session_start() function, 
+                PHP checks for an existing session ID in the user's browser. If no 
+                session ID is found, PHP generates a unique, random ID.
+            </p>
+            <p>This ID (stored in a cookie named PHPSESSID) is the only piece of 
+                information stored on the client side. The session data is stored 
+                securely on the server, typically in a temporary file.
+            </p>
+            <p>On the next page load, the server gets the session ID from the cookie 
+                and uses it to load the session data into the PHP superglobal $_SESSION. 
+                The session data is then available to the current script in all scopes.
+            </p>
+            <p>Another way to show all the session variable values for a user session 
+                is by using print_r($_SESSION) in the html body while a session has 
+                been started:
+            </p>
+            <p>
+                <code>
+                    &lt?php<br>
+                    print_r($_SESSION);<br>
+                    ?><br>
+                </code>
+            </p>
+        </div>
+        <hr>
+        <div class="mainDiv">
+            <h4>Modify a PHP Session Variable</h4>
+            <p>To change a session variable, just overwrite it:</p>
+            <p>
+                <code>
+                    &lt?php<br>
+                    // to change a session variable, just overwrite it<br>
+                    $_SESSION["favcolor"] = "yellow";<br>
+                    print_r($_SESSION);<br>
+                    ?><br>
+                </code>
+            </p>
+        </div>
+        <div class="mainDiv">
+            <h4>Destroy a PHP Session </h4>
+            <p>Next, we'll create another PHP page called "logout.php". Here we 
+                will unset all session variables and destroy the session 
+                (with session_unset() and session_destroy()):
+            </p>
+            <p>
+                <code>
+                    &lt?php<br>
+                    // Resume the session<br>
+                    session_start();<br>
+                    ?><br>
+                    
+                    &lt!DOCTYPE html><br>
+                    &lthtml><br>
+                    &ltbody><br><br>
+                    
+                    &lt?php<br>
+                    // Unset all session variables<br>
+                    session_unset();<br><br>
+                    
+                    // Destroy the session<br>
+                    session_destroy();<br>
+                    echo "You have been logged out."<br>
+                    ?><br><br>
+                    &lt/body><br>
+                    &lt/html>
+                </code>
+            </p>
+        </div>
+    </body>
+</html>
